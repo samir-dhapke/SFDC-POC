@@ -1,3 +1,13 @@
+/**
+ * @description       : 
+ * @author            : Samir Dhapke
+ * @group             : 
+ * @last modified on  : 02-23-2024
+ * @last modified by  : Samir Dhapke 
+ * Modifications Log
+ * Ver   Date         Author         Modification
+ * 1.0   02-23-2024   Samir Dhapke   Initial Version
+**/
 import { LightningElement, wire } from 'lwc';
 //import myMethod from '@salesforce/apex/MyClass.myMethod';
 
@@ -8,6 +18,7 @@ export default class WireMethodOrderOfExecution extends LightningElement {
             country: null
         }
         console.log(JSON.stringify(employee));
+
         //need to write employee.country expression twice
         // if (!employee.country) {
         //     employee.country = 'India';
