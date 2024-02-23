@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <description>Screen: Input From Flow and Outfrom LWC</description>
+    <environments>Default</environments>
+    <interviewLabel>Screen: Input From Flow and Outfrom LWC {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Screen: Input From Flow and Outfrom LWC</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>LWC_to_Flow_Integration</name>
+        <label>LWC to Flow Integration</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Enter_Number_1</name>
+            <dataType>String</dataType>
+            <fieldText>Enter Number 1</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Enter_Number_2</name>
+            <dataType>String</dataType>
+            <fieldText>Enter Number 2</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>lwcclculator</name>
+            <extensionName>c:calculatorForFLow</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>inputNumber1</name>
+                <value>
+                    <elementReference>Enter_Number_1</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>inputNumber2</name>
+                <value>
+                    <elementReference>Enter_Number_2</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Result</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>lwcclculator.outputResult</elementReference>
+            </defaultValue>
+            <fieldText>Result</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>LWC_to_Flow_Integration</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

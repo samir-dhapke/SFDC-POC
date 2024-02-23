@@ -1,0 +1,42 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 12-16-2023
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   12-16-2023   Samir Dhapke   Initial Version
+-->
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 12-16-2023
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   12-16-2023   Samir Dhapke   Initial Version
+-->
+<template>
+    <lightning-card title="Accordian Display Account With Related Child Contacts">
+        <lightning-accordion allow-multiple-sections-open>
+            <template for:each={allData} for:item="acc">
+                <lightning-accordion-section name="A" label={acc.Name} key={acc.Id}>
+                    <lightning-datatable
+                            key-field="Id"
+                            data={acc.Contacts}
+                            columns={columnsList}>
+                        </lightning-datatable>
+                    <!-- <template for:each={acc.Contacts} for:item="con">
+                        <lightning-accordion-section name="A" label={con.Name} key={con.Id}>
+                            <P>Name : {con.Name}</P><br>
+                            <P>Phone : {con.Phone}</P>
+                            <P>Account Name : {con.Account.Name}</P>
+                        </lightning-accordion-section>
+                    </template> -->
+                </lightning-accordion-section>
+            </template>
+        </lightning-accordion>
+    </lightning-card>
+</template>

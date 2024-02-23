@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="lwc:ref Demo" icon-name="standard:account">
+
+        <lightning-button slot="actions" onclick={handleClick} label="Open Alert Modal">
+        </lightning-button>
+        <div class="slds-p-around_medium">
+            <p lwc:ref="mytext" class="slds-var-text-align_center"> Samir Dhapke</p>
+            <lightning-button variant="brand" onclick={handleChange} label="Click Me">
+            </lightning-button>
+        </div>
+        <c-lwc-refs-child lwc:ref="myChildRefs"></c-lwc-refs-child>
+    </lightning-card>
+
+</template>

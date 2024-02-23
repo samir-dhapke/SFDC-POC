@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 12-19-2023
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   12-19-2023   Samir Dhapke   Initial 
+                                
+                            
+-->
+<template>
+    <lightning-card title="Inline Editing and Add Picklist in lightning-datatable in LWC Salesforce" icon-name="standard:contact">
+        <template lwc:if={contactData}>
+            <lightning-datatable key-field="Id"
+                                 data={contactData} 
+                                 columns={columns}    
+                                 onsave={handleSave}
+                                 draft-values={draftValues} 
+                                 hide-checkbox-column 
+                                 show-row-number-column>
+                                </lightning-datatable>                           
+           
+        </template>
+    </lightning-card>
+</template>

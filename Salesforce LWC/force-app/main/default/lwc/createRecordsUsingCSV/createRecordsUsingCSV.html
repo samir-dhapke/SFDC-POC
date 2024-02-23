@@ -1,0 +1,43 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 02-09-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   02-09-2024   Samir Dhapke   Initial Version
+-->
+<template>
+
+    <lightning-card title='Process CSV File'>
+
+        <div class='file-uploader'>
+
+            <lightning-input label='' name='file uploader' onchange={handleFilesChange} type='file'
+                multiple></lightning-input>
+
+            <div class='error-message'>{fileName}</div>
+
+            <lightning-button class='upload-button' label={UploadFile} onclick={handleSave} variant='brand'
+                disabled={isTrue}></lightning-button>
+
+        </div>
+
+    </lightning-card>
+
+    <lightning-card title='Accounts' icon-name='standard:account'>
+
+        <div class='datatable-container myTable' if:true={data}>
+            
+            <lightning-datatable 
+                                data={data} 
+                                columns={columns} 
+                                key-field='id'>
+            </lightning-datatable>
+
+        </div>
+
+    </lightning-card>
+
+</template>

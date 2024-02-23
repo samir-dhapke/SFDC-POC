@@ -1,0 +1,13 @@
+<template>
+
+    <lightning-card variant="Narrow" title="Lightning Record Picker in LWC" icon-name="standard:record_lookup">
+        <lightning-record-picker 
+                        label="Select a record" 
+                        placeholder="Search..." 
+                        object-api-name="Contact"
+                        value={initialValue} 
+                        filter={filter}
+                        onchange={handleChange}>
+        </lightning-record-picker>
+    </lightning-card>
+</template>

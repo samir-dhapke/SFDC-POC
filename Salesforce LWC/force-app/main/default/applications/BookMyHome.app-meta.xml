@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#E72727</headerColor>
+        <logo>logo_raw</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>This application is used to book the home in different locations.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>BookMyHome</label>
+    <navType>Standard</navType>
+    <tabs>My_Home</tabs>
+    <tabs>Property_Owner__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>BookMyHome_UtilityBar</utilityBar>
+</CustomApplication>

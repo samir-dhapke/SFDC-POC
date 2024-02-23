@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 02-09-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   02-09-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <lightning-card title="Export Records">
+<div class="slds-var-p-around_small">
+    <lightning-button 
+                variant="brand" 
+                label="Export Data" 
+                title="Export Data Into CSV" 
+                onclick={handleClick} 
+                icon-name="utility:download"
+                disabled={checkRecord}>
+    </lightning-button>
+
+</div>
+        <lightning-datatable
+                key-field="id"
+                data={accountData}
+                columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

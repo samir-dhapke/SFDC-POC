@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Use LWC Inside the Flow and Pass the Parameter">
+        <div class="slds-var-p-around_medium">
+            <p>I'm From LWC Component</p>
+            <template for:each={inputValue} for:item="con">
+                <p key={con}>{con}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

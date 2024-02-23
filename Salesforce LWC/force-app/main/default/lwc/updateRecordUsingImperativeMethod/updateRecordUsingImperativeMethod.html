@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Update Operation using Imperative Method">
+        <div class="slds-var-p-around_small">
+            <lightning-input
+                    label="Account Name"
+                    readonly="true"
+                    value={accname}>
+            </lightning-input>
+            <lightning-input
+                    label="Ticker Symbol"
+                    value={accTicker}
+                    onchange={changeHandler}>
+            </lightning-input>
+        </div>
+        <div class="slds-var-p-around_small">
+            <lightning-button label="Update Record" 
+                              onclick={handleClick} 
+                              variant="brand">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

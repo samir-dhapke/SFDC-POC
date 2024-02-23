@@ -1,0 +1,24 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="DataTable With Row Selection">
+
+   
+    <lightning-button variant="brand" label={showContact} onclick={handleClick}>
+    </lightning-button>
+    <template if:true={isVisible}>
+        <lightning-card title="LWC DataTable Row Selection">
+            <lightning-input type="search" onchange={handleChanged} label="Search" value={searchKey}>
+
+            </lightning-input>
+           
+            <lightning-datatable data={data} 
+                                 columns={columns} 
+                                 key-field="id" 
+                                 onrowselection={getSelectedRow}>
+            </lightning-datatable>
+        </lightning-card>
+
+
+    </template>
+</lightning-card>
+</template>

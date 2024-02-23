@@ -1,0 +1,35 @@
+.file-uploader {
+
+    margin-left: 4%;
+    
+    margin: 0px auto;
+    
+    width: 300px;
+    
+    }
+    
+    .error-message {
+    
+    margin-top: 8px;
+    
+    font-size: 12px;
+    
+    color: red;
+    
+    }
+    
+    .upload-button {
+    
+    margin-top: 16px;
+    
+    }
+    
+    .datatable-container {
+    
+    width: auto;
+    
+    }
+    
+    .myTable table>thead .slds-cell-fixed.slds-has-button-menu{
+        background-color: blueviolet;
+      }

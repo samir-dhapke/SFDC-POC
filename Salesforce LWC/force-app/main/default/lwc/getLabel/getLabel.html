@@ -1,0 +1,55 @@
+<template>
+    <div class="slds-var-p-bottom_x-small">
+        <lightning-card title="Get Label Through LWC" variant="narrow" icon-name="custom:custom19">
+            <p class="slds-var-m-left_x-large">{label.greeting}</p>
+        </lightning-card>
+    </div>
+
+    <div class="slds-var-p-bottom_x-small">
+        <lightning-card title="Curently Logged In User Id LWC" variant="narrow" icon-name="custom:custom19">
+            <p class="slds-var-m-left_x-large">Curently Logged In User Id: {userId}</p>
+        </lightning-card>
+    </div>
+
+    <div class="slds-var-p-bottom_x-small">
+        <lightning-card title="Curently Logged In User Name" variant="narrow" icon-name="custom:custom19">
+            <p class="slds-var-m-left_x-large">Curently Logged In User Name : {NameOfUser}</p>
+        </lightning-card>
+    </div>
+
+    <div class="slds-var-p-bottom_x-small">
+        <lightning-card title="Check Permissions" variant="narrow" icon-name="custom:custom19">
+            <div class="slds-var-p-around_small">
+                <template lwc:if={checkPermission}>
+                    <p>You are Authorised to view the Message.</p>
+                </template>
+                <template lwc:else>
+                    <p>You are Not Authorised to view the Message.</p>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+
+    <!-- <div class="slds-var-p-bottom_x-small">
+        <lightning-card title="Third Party CSS" variant="narrow" icon-name="custom:custom19">
+           
+            <div class="slds-var-m-around_small">
+               <p class="slds-text-heading_medium animate__backInRight animate__delay-5s">{NameOfUser}</p> 
+            </div>
+        </lightning-card>
+    </div> -->
+
+        <lightning-card title="Third Party CSS" variant="narrow" icon-name="custom:custom19">
+           
+            <div class="slds-var-m-around_small">
+               <p class="slds-text-heading_medium animate__bounceIn animate__delay-5s">{NameOfUser}</p> 
+            </div>
+        </lightning-card><br>
+        <lightning-card title="Third Party JS" variant="narrow" icon-name="custom:custom19">
+           
+            <div class="slds-var-m-around_small">
+               <p class="slds-text-heading_medium">{displayDate}</p> 
+            </div>
+        </lightning-card>
+    
+</template>

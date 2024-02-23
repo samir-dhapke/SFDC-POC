@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property label="City" name="city" type="String"></property>
+            <property label="Country" name="country" type="String"></property>
+            <property label="PostalCode" name="postalCode" type="String"></property>
+            <property label="State" name="state" type="String"></property>
+            <property label="Street" name="street" type="String"></property>
+            <property label="Title" name="title" type="String"></property>
+            <property label="Description" name="description" type="String"></property>
+
+        </targetConfig>
+    </targetConfigs>
+
+    <!-- to take the input from flow we use property tag unsder targetconfig 
+    role="inputOnly" use to get input from flow
+ role="outputOnly" use for sending value from lwc if not putting any value then for input and output
+            both-->
+</LightningComponentBundle>

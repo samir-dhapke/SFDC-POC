@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 12-17-2023
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   12-17-2023   Samir Dhapke   Initial Version
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Custom Styling DataTable" icon-name="standard:contact">
+        <div style="height: 800px;">
+            <c-custom-data-type
+                    key-field="id"
+                    data={contact}
+                    columns={columns}>
+            </c-custom-data-type>
+        </div>
+    </lightning-card>
+</template>

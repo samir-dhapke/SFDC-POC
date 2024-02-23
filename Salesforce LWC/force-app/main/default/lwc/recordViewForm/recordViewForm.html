@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title=" Record View form Example in LWC">
+        <lightning-record-view-form
+        object-api-name={objectApiName}
+        fields={fildsnames}
+        record-id={recordId}
+        density="Compact"><!-- comfy Compact auto display field infron or upper  to the field-->
+        <lightning-output-field field-name="Name"></lightning-output-field>
+        <lightning-output-field field-name="Type"></lightning-output-field>
+        <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+        </lightning-record-view-form>
+
+    </lightning-card>
+</template>

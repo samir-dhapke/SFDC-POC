@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Demo Track">
+       
+        <lightning-input name="firstName" label="first Name" onchange={handleChange}></lightning-input>
+        
+        <lightning-input  name="lastName" label="last Name" onchange={handleChange}></lightning-input>
+        <br>
+        Updated First Name : <b>{fullName.firstName}</b> <br>
+        Updated Last Name : <b>{fullName.lastName}</b>
+    </lightning-card>
+   
+</template>

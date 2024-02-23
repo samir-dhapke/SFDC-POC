@@ -1,0 +1,22 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    
+    <lightning-card icon-name="standard:actions_and_buttons">
+        <template lwc:if={cricketerData}>
+            <span slot="title">{cricketerData.Name}</span>
+            <lightning-button-icon icon-name="utility:expand_alt" slot="actions" onclick={handleNevigateToRecord}>
+            </lightning-button-icon>
+
+            <div class="slds-p-around_small">
+                <img src={cricketerData.Image_Url__c} class="cricketer" />
+                <h1 class="slds-m-bottom_small"> Players Details</h1>
+                <p>Runs : {cricketerData.Runs__c}</p>
+                <p>Age : {cricketerData.Age__c}</p>
+                <p>Nationality : {cricketerData.Nationality__c}</p>
+            </div>
+        </template>
+        <template lwc:else>
+            <p class="slds-align_absolute-center"> Select Player to see details </p>
+        </template>
+    </lightning-card>
+</template>

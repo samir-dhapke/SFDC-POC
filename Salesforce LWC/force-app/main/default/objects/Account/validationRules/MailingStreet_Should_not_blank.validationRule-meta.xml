@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MailingStreet_Should_not_blank</fullName>
+    <active>false</active>
+    <description>MailingStreet_Should_not_blank</description>
+    <errorConditionFormula>ISBLANK( BillingStreet )</errorConditionFormula>
+    <errorMessage>MailingStreet_Should_not_blank</errorMessage>
+</ValidationRule>

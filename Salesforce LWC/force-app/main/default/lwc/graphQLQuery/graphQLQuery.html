@@ -1,0 +1,49 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 01-17-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   01-08-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <lightning-card title="Example-1.1 : Wired with GraphQL" icon-name="utility:user">
+        <lightning-spinner variant='brand' size='small' lwc:if={isLoading}>
+        </lightning-spinner>
+        <div class="slds-var-m-horizontal_medium">
+            <lightning-input type='search' placeholder='search contacts with name' onchange={handleOnChange}>
+                </lightning-input>
+        </div>
+        
+        
+        <div class="slds-var-m-around_large">
+        <lightning-datatable 
+                        key-field="Id" 
+                        columns={columnList} 
+                        data={dataList}>
+        </lightning-datatable>
+        <p class="slds-text-align_center slds-p-top_medium" style="color:lightseagreen">
+            Displaying page {pageNumber} of {totalPages} from total Records {totalCount}.
+        </p>
+       </div>
+            
+       <div class="slds-var-m-around_large">
+        <lightning-button 
+                        variant='brand' 
+                        icon-name="utility:chevronright" 
+                        onclick={handleNext} 
+                        disabled={disableNextButton}
+                        >
+        </lightning-button>
+        <lightning-button 
+                        variant='brand' 
+                        icon-name="action:reset_password" 
+                        onclick={handlereset} 
+                        class="slds-float_right"
+                        >
+        </lightning-button>
+       </div>
+    </lightning-card>
+</template>

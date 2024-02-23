@@ -1,0 +1,97 @@
+<template>
+    <lightning-card title={formTitle} icon-name="custom:custom14">
+        <div class="slds-var-p-around_small">   
+            <!-- Select Parent Account         -->
+                <lightning-combobox
+                        name="parentAcc"
+                        label="Parent Account"
+                        placeholder="Select Parent Account"
+                        options={parentOptions}
+                        onchange={handleChange}
+                        required="true"
+                        class="validateMe"
+                        value={selectedAccount}
+                        message-when-value-missing="Please Select Parent Account" >
+                    </lightning-combobox>  
+                    
+            <!-- Enter Account Name         -->
+        <lightning-input
+            placeholder="Enter Account Name"
+            onchange={handleChange}
+            label="Enter Account Name"
+            type="text"
+            name="accName"
+            required="true"
+            value={selctedAccountName}
+            message-when-value-missing="Enter Account Name"
+            min-length="2"
+            max-length="60"
+            class="validateMe"
+            message-when-too-short="Minimum Length of Account Name is 2"
+            message-when-too-long="Maximum Length of Account Name is 60">
+        </lightning-input>
+
+        <!-- SLA Expiration Date -->
+        <lightning-input
+        type="date"
+        onchange={handleChange}
+        label="SLA Expiration Date"
+        name="slaexpt"
+        required="true"
+        value={selectedExpiryDate}
+        message-when-value-missing="Select Expiration Date">
+        </lightning-input>
+
+        <!-- SLA Type -->
+        <template lwc:if={slaPickList.data}>
+        <lightning-radio-group 
+                          name="slatype"
+                          label="SLA Type"
+                          options={slaPickList.data.values}
+                          type="button"
+                          onchange={handleChange}
+                          value={selectedSLAType}>
+        </lightning-radio-group>
+    </template>
+<!-- Number Of Location -->
+        <lightning-slider label="Number Of Location" 
+                          min="1"
+                          max="50"
+                          step="1"
+                          value={selectedNoOfLocation}
+                          onchange={handleChange}
+                          name="numberOfLocation"
+                          >
+        </lightning-slider>
+<br><br>
+        <!-- Description -->
+        <lightning-input-rich-text
+        name="description"
+        label="Description"
+        onchange={handleChange}
+        desable-categories="FORMAT_FONT"
+        value={selectedDescription}>
+        </lightning-input-rich-text>
+        </div>
+        <div class="slds-var-p-around_small">
+            <lightning-button
+                label="Save"
+                variant="brand"
+                onclick={saveRecord}>
+            </lightning-button>
+            <template lwc:if={isDeleteAvailabe}>
+    <!-- delete Record Button -->
+                <lightning-button 
+                        variant="destructive" 
+                        label="Delete Account" 
+                        title="Delete" 
+                        icon-name="utility:delete" 
+                        onclick={deleteHandler}
+                        class="slds-var-m-left_x-small">
+                </lightning-button>
+            
+        </template>
+        </div>
+        
+    </lightning-card>
+</template>

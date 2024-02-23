@@ -1,0 +1,4 @@
+<aura:component
+    implements="lightning:actionOverride,force:hasRecordId,force:hasSObjectName">
+<c:wireAdapterCreateRecord recordId="{!v.recordId}"></c:wireAdapterCreateRecord>
+</aura:component>

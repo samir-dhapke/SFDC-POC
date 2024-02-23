@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="LWC DataTable Related Contacts">
+        <div class="slds-align_absolute-center slds-m-around_x-small">
+            <lightning-button label="New Contact" onclick={handleClick}></lightning-button>
+        </div>
+        <lightning-datatable key-field="Id" 
+                             data={contactData} 
+                             columns={columns} 
+                             hide-checkbox-column
+                             onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

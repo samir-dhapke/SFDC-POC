@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Record Edit Form Example">
+        <lightning-record-edit-form
+        object-api-name={objectName}
+        fields={fieldName}
+       onsuccess={successHAndler} 
+        >
+        <lightning-input-field field-name="Name"></lightning-input-field>
+        <label>Website</label>
+        <lightning-input-field variant="label-hidden" field-name="Site"></lightning-input-field>
+        <label>Postal Address</label>
+        <lightning-input-field variant="label-hidden" field-name="BillingAddress"></lightning-input-field>
+        <lightning-button type="submit" name="submit" label="Save Record"></lightning-button>
+        <lightning-button
+                class="slds-m-top_small"
+                label="Cancel"
+                onclick={handleReset}
+            ></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>  
+</template>

@@ -1,0 +1,19 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Combobox With Datatable Account Related Contact Display">
+        <!-- combox stats here -->
+        <lightning-combobox 
+                        label="Accounts for Available" 
+                        value={value} 
+                        options={options} 
+                        placeholder="Select Account"
+                        onchange={handleChangeAccount}>
+        </lightning-combobox>
+        <!-- combobox ends here -->
+        <templete if:true={isVisible}>
+            <lightning-datatable key-field="Id" data={data} columns={columns}>
+            </lightning-datatable>
+        </templete>
+    </lightning-card>
+</template>

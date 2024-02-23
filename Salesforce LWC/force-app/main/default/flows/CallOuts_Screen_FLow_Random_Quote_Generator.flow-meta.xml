@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Get_Random_Quote</name>
+        <label>Get Random Quote</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <actionName>QuoteGenerator1.Get Random Quote1</actionName>
+        <actionType>externalService</actionType>
+        <connector>
+            <targetReference>Check_Status_Code_is_200</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Display_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>QuoteGenerator1.Get Random Quote1</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <decisions>
+        <name>Check_Status_Code_is_200</name>
+        <label>Check Status Code is 200</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Api_Error_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Status Code is  not 200</defaultConnectorLabel>
+        <rules>
+            <name>Status_Code_is_200</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Random_Quote.responseCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>200.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Show_Response_Quote</targetReference>
+            </connector>
+            <label>Status Code is 200</label>
+        </rules>
+    </decisions>
+    <description>CallOuts : Screen FLow Random Quote Generator</description>
+    <environments>Default</environments>
+    <interviewLabel>CallOuts : Screen FLow Random Quote Generator {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CallOuts : Screen FLow Random Quote Generator</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Api_Error_Message</name>
+        <label>Api Error Message</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>APIErroMessage</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 36px; color: rgb(224, 21, 21);&quot;&gt;{!Get_Random_Quote.defaultExc}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Display_Error</name>
+        <label>Display Error</label>
+        <locationX>578</locationX>
+        <locationY>242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>errorMessage</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 36px; color: rgb(253, 27, 27);&quot;&gt;{!$Flow.FaultMessage}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Show_Response_Quote</name>
+        <label>Show Response Quote</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>showResponseQuote</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 36px; color: rgb(11, 212, 78);&quot;&gt;{!Get_Random_Quote.2XX.content}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Random_Quote</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

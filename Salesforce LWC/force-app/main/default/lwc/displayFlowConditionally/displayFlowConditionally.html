@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 02-02-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   02-02-2024   Samir Dhapke   Initial Version
+-->
+<template>
+   <template lwc:if={isAccountRatingHot}>
+    <lightning-flow
+    flow-api-name='Screen_Hot_Account_Rating'
+    flow-input-variables={inputVariables}
+>
+</lightning-flow>
+   </template> 
+   <template lwc:elseif={isAccountRatingWarm}>
+    <lightning-flow
+    flow-api-name='Screen_Warm_Account_Rating'
+    flow-input-variables={inputVariables}
+>
+</lightning-flow>
+   </template> 
+   <template lwc:elseif={isAccountRatingCold}>
+    <lightning-flow
+    flow-api-name='Screen_Cold_Account_Rating'
+    flow-input-variables={inputVariables}
+>
+</lightning-flow>
+   </template> 
+</template>
