@@ -12,11 +12,25 @@ import { LightningElement } from 'lwc';
 
 export default class RegistraionForm extends LightningElement {
 
-    alignCenter = 'slds-align_absolute-center';
+
     hideRegistrationForm = true;
     getOTPForm = false;
+    isOTPVerified = false;
+    educationalDetailSubmitted = false;
     handleNext() {
         this.hideRegistrationForm = false;
         this.getOTPForm = true;
     }
+    verifyOTP() {
+        this.hideRegistrationForm = false;
+        this.isOTPVerified = true;
+        this.getOTPForm = false;
+    }
+
+    submitEducationalDetails() {
+        this.isOTPVerified = false;
+        this.educationalDetailSubmitted = true;
+    }
+
+
 }

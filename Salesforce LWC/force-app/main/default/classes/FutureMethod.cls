@@ -7,16 +7,19 @@ public class FutureMethod {
                                     Rating='Hot'
                                      );  
                 insert acc;
-				//createSalesforceUser();
-        try{
+				createSalesforceUser();
+				//Integer i = 100/0;
+      try{
              Integer i = 100/0;
         }
         catch(system.exception e){
            System.debug('The following exception has occurred: ' + e.getMessage());
         }
-       createSalesforceUsera();
-         createSalesforceUseraq();                                   
+       //createSalesforceUsera();
+        // createSalesforceUseraq(); 
+
       }
+    /*
      @future()
     public static void createSalesforceUsera() {
         System.debug('The following exception has occurred 1');
@@ -25,9 +28,10 @@ public class FutureMethod {
     public static void createSalesforceUseraq() {
         System.debug('The following exception has occurred 2 ');
     }
-   /* @future()
+*/
+    @future()
   	public static void createSalesforceUser() {
-        Id roleId = [SELECT Id FROM UserRole WHERE Name = 'CEO' LIMIT 1].Id;
+        Id roleId = [SELECT Id FROM UserRole WHERE Name = 'COO' LIMIT 1].Id;
        // Create a new User object
         User newUser = new User();
 
@@ -50,4 +54,4 @@ public class FutureMethod {
      // Insert the user
       insert newUser;                                          
     }
-*/ }
+ }
