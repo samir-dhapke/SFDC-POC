@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 02-24-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   02-24-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <lightning-card>
+    <lightning-progress-indicator 
+                current-step={getCaseStatusValue} 
+                type="path" 
+                variant="base">
+        <template for:each={statusOption} for:item="step">
+            <lightning-progress-step 
+                    label={step.label} 
+                    value={step.value} 
+                    key={step.value}>
+            </lightning-progress-step>
+        </template>
+    </lightning-progress-indicator>
+</lightning-card>
+</template>
