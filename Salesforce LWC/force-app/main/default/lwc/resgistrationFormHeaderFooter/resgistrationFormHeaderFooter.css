@@ -1,0 +1,66 @@
+.rectangle2 {
+    position: relative;
+    height: 100px;
+    width: 85%;
+    background-color: #1193e6;
+    
+}
+.rectangle2:before {
+    position: absolute;
+    content: '';
+    height: 100px;
+    width: 40%;
+    background-color:#1193e6;
+    top: 0;
+    right: -40px;
+    transform: skewX(-35deg);
+    
+}
+.rectangle3 {
+    position: relative;
+    height: 100px;
+    width: 90%;
+    background-color: rgb(39, 40, 42);
+   
+}
+.rectangle3:before {
+    position: absolute;
+    content: '';
+    height: 100px;
+    width: 40%;
+    background-color:rgb(39, 40, 42);
+    top: 0;
+    left: -40px;
+    transform: skewX(-35deg);
+    
+}
+
+.rectangle1 {
+    position: relative;
+    height: 100px;
+    width: 90%;
+    background-color: #1193e6;
+}
+
+.rectangle1:before {
+    position: absolute;
+    content: '';
+    height: 100px;
+    width: 90%;
+    background-color: #1193e6;
+    top: 0;
+    left: -40px;
+    transform: skewX(35deg);
+    
+}
+.rectangle {
+    height: 100px;
+    width: 70px;
+    background-color: #1193e6;
+    transform: skewX(35deg);
+}
+
+img{
+    height: 100px;
+    width: 100%;
+}

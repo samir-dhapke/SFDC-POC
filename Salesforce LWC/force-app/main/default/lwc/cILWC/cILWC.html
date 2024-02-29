@@ -1,0 +1,48 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 02-27-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   02-27-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <!-- <lightning-card title="Apex Wire Method With Function Parameters">            
+        <lightning-layout>
+          <lightning-layout-item flexibility="auto" padding="around-small">
+                <lightning-input label="Enter Account Name" type="search"  onchange={searchContact} value={searchKey}></lightning-input>
+                    <br/>
+                    <template if:true={contacts}>                        
+                        <template for:each={contacts} for:item="contact">                        
+                            <p key={contact.Id}>                               
+                                {contact.Name}
+                            </p>
+                        </template>
+                    </template>
+                    <template if:true={error}>
+                        {error}>
+                    </template>                    
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-card> -->
+      <lightning-card title="Apex Wire Method With Function Parameters Search Accounts">            
+        <lightning-layout>
+          <lightning-layout-item flexibility="auto" padding="around-small">
+                <lightning-input label="Enter Account Name" type="search"  onchange={searchAccounts} value={searchKey}></lightning-input>
+                    <br/>
+                    <template if:true={accounts}>                        
+                        <template for:each={accounts} for:item="acc">                        
+                            <p key={acc.Id}>                               
+                                {acc.Name}
+                            </p>
+                        </template>
+                    </template>
+                    <template if:true={error}>
+                        {error}>
+                    </template>                    
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-card>
+</template>

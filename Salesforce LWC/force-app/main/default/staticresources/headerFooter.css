@@ -1,0 +1,8 @@
+.rectangle {
+
+    width: 20px;
+	height: 50px;
+	transform: skew(35deg);
+    background-color:rgb(119, 142, 234);
+  }
+  
