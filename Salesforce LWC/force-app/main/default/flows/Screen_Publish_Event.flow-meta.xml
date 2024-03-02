@@ -60,7 +60,6 @@
             <dataType>String</dataType>
             <fieldText>Input Order Number</fieldText>
             <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
         <fields>
@@ -68,7 +67,6 @@
             <dataType>Boolean</dataType>
             <fieldText>Input Generate Invoice</fieldText>
             <fieldType>InputField</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <nextOrFinishButtonLabel>Publish Event</nextOrFinishButtonLabel>
