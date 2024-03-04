@@ -1,14 +1,22 @@
 .rectangle2 {
     position: relative;
-    height: 100px;
+    height: 90px;
     width: 85%;
     background-color: #1193e6;
+    display: flex;
+            justify-content: center;
+            align-items: center;
     
+}
+
+.rec{ 
+    color: white;
+       
 }
 .rectangle2:before {
     position: absolute;
     content: '';
-    height: 100px;
+    height: 90px;
     width: 40%;
     background-color:#1193e6;
     top: 0;
@@ -18,7 +26,7 @@
 }
 .rectangle3 {
     position: relative;
-    height: 100px;
+    height: 70px;
     width: 90%;
     background-color: rgb(39, 40, 42);
    
@@ -26,7 +34,7 @@
 .rectangle3:before {
     position: absolute;
     content: '';
-    height: 100px;
+    height: 70px;
     width: 40%;
     background-color:rgb(39, 40, 42);
     top: 0;
@@ -37,7 +45,7 @@
 
 .rectangle1 {
     position: relative;
-    height: 100px;
+    height: 70px;
     width: 90%;
     background-color: #1193e6;
 }
@@ -45,7 +53,7 @@
 .rectangle1:before {
     position: absolute;
     content: '';
-    height: 100px;
+    height: 70px;
     width: 90%;
     background-color: #1193e6;
     top: 0;
@@ -54,13 +62,19 @@
     
 }
 .rectangle {
-    height: 100px;
-    width: 70px;
-    background-color: #1193e6;
+    height: 70px;
+    width: 50px;
+    background-color:#5cb4ec;
+    transform: skewX(35deg);
+}
+.rectanglee {
+    height: 70px;
+    width: 50px;
+    background-color: #39a8ec;
     transform: skewX(35deg);
 }
 
 img{
-    height: 100px;
+    height: 70px;
     width: 100%;
 }
