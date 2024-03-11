@@ -42,39 +42,99 @@
     transform: skewX(-35deg);
     
 }
-
+/* Header */
 .rectangle1 {
     position: relative;
-    height: 70px;
+    height: 60px;
     width: 90%;
     background-color: #1193e6;
+    padding-bottom: 55px;
 }
 
 .rectangle1:before {
     position: absolute;
     content: '';
-    height: 70px;
+    height: 60px;
     width: 90%;
     background-color: #1193e6;
     top: 0;
     left: -40px;
-    transform: skewX(35deg);
+    transform: skewX(45deg);
     
 }
 .rectangle {
-    height: 70px;
-    width: 50px;
+    height: 60px;
+    width: 54%;
     background-color:#5cb4ec;
-    transform: skewX(35deg);
+    margin-left: 39px;
+    transform: skewX(45deg);
+    margin-left: 24px
 }
 .rectanglee {
-    height: 70px;
-    width: 50px;
+    height: 60px;
+    width: 54%;
     background-color: #39a8ec;
-    transform: skewX(35deg);
+    transform: skewX(45deg);
+    margin-left: -8px
+}
+/* iPad 6th generation in portrait mode */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) 
+  and (orientation: portrait) {
+    /* Your CSS rules specific to iPad 6th generation portrait mode */
+    .rectanglee {
+        width: 62%;
+        margin-left: -15px;
+    }
+    .rectangle{
+        width: 62%;
+        margin-left: 13px;
+    }
+    img{
+        padding-left: 8%;
+        margin-left: -10px;
+    }
+    .logo{
+        height: 60px;
+        width: 100%; 
+        margin-left: 140%;
+    }
 }
 
+/* iPad 6th generation in landscape mode */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) 
+  and (orientation: landscape) {
+    /* Your CSS rules specific to iPad 6th generation landscape mode */
+    .rectanglee {
+        width: 62%;
+        margin-left: -15px;
+    }
+    .rectangle{
+        width: 62%;
+        margin-left: 13px;
+    }
+    img{
+        padding-left: 5%;
+        margin-left: -10px;
+    }
+    .logo{
+        height: 60px;
+        width: 100%; 
+        margin-left: 140%;
+    }
+}
+.logo{
+    height: 60px;
+    width: 100%; 
+    margin-left: 71%;
+}
 img{
-    height: 70px;
+    height: 60px;
     width: 100%;
+    padding-left: 4%;
 }

@@ -1,4 +1,5 @@
 public class FutureMethodToUpdateEmail {
+    @future
     public static void run() {
         List<Contact> conList = [Select Id, Email from Contact LIMIT 10];
         for(Contact con:conList){

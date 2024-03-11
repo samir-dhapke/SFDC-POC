@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Samir Dhapke
  * @group             : 
- * @last modified on  : 02-27-2024
+ * @last modified on  : 03-11-2024
  * @last modified by  : Samir Dhapke
  * Modifications Log
  * Ver   Date         Author         Modification
@@ -10,6 +10,8 @@
 **/
 import { LightningElement } from 'lwc';
 import CILOGO from '@salesforce/resourceUrl/CILOGO';
+import CILOGOSYMBOL from '@salesforce/resourceUrl/CILOGOSYMBOL';
 export default class ResgistrationFormHeaderFooter extends LightningElement {
     ciLogo = CILOGO;
+    cilogoSymbol = CILOGOSYMBOL;
 }

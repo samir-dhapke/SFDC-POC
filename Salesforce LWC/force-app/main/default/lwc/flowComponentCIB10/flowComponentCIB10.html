@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 03-09-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   03-08-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <lightning-input value={inputValue} class="error" label="Name" type="text" title="Input" 
+    onchange={handleChange}></lightning-input>
+    <template for:each={accList} for:item="acc">
+<p key={acc.Id}> --{acc.Name} -- {acc.Id}--</p>
+    </template>
+    
+</template>

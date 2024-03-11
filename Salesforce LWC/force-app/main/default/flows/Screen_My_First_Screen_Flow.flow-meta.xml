@@ -68,6 +68,7 @@
             <fieldText>Full Name</fieldText>
             <fieldType>InputField</fieldType>
             <helpText>&lt;p&gt;Full Name&lt;/p&gt;</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -97,6 +98,7 @@
             <dataType>Number</dataType>
             <fieldText>Number</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <scale>0</scale>
         </fields>
@@ -105,6 +107,7 @@
             <dataType>Currency</dataType>
             <fieldText>Currency</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <scale>0</scale>
         </fields>
@@ -128,6 +131,7 @@
             <dataType>String</dataType>
             <fieldText>Industry</fieldText>
             <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <fields>
@@ -136,6 +140,7 @@
             <dataType>String</dataType>
             <fieldText>Skills</fieldText>
             <fieldType>MultiSelectPicklist</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>

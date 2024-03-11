@@ -53,6 +53,7 @@
             <dataType>String</dataType>
             <fieldText>Account Name</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
         <nextOrFinishButtonLabel>Create Record</nextOrFinishButtonLabel>
