@@ -1,11 +1,12 @@
 .rectangle2 {
     position: relative;
-    height: 90px;
-    width: 85%;
+    height: 70px;
+    width: 84%;
     background-color: #1193e6;
     display: flex;
             justify-content: center;
             align-items: center;
+            margin-left: 77px;
     
 }
 
@@ -16,19 +17,20 @@
 .rectangle2:before {
     position: absolute;
     content: '';
-    height: 90px;
+    height: 70px;
     width: 40%;
     background-color:#1193e6;
     top: 0;
-    right: -40px;
+    right: -24px;
     transform: skewX(-35deg);
     
 }
 .rectangle3 {
     position: relative;
     height: 70px;
-    width: 90%;
+    width: 88%;
     background-color: rgb(39, 40, 42);
+    margin-left: 29px;
    
 }
 .rectangle3:before {
@@ -38,7 +40,7 @@
     width: 40%;
     background-color:rgb(39, 40, 42);
     top: 0;
-    left: -40px;
+    left: -25px;
     transform: skewX(-35deg);
     
 }
@@ -48,7 +50,7 @@
     height: 60px;
     width: 90%;
     background-color: #1193e6;
-    padding-bottom: 55px;
+    padding-bottom: 61px;
 }
 
 .rectangle1:before {
@@ -101,6 +103,13 @@
         width: 100%; 
         margin-left: 140%;
     }
+    .rectangle3 {
+        width: 83%;
+        margin-left: 29px;
+    }
+    .rectangle2{
+        margin-left: 29px;
+    }
 }
 
 /* iPad 6th generation in landscape mode */
@@ -136,5 +145,5 @@
 img{
     height: 60px;
     width: 100%;
-    padding-left: 4%;
+    padding-left: 8%;
 }
