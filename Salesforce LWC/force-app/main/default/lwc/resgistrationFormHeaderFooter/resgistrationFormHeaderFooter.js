@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Samir Dhapke
  * @group             : 
- * @last modified on  : 03-11-2024
+ * @last modified on  : 03-13-2024
  * @last modified by  : Samir Dhapke
  * Modifications Log
  * Ver   Date         Author         Modification
@@ -14,4 +14,25 @@ import CILOGOSYMBOL from '@salesforce/resourceUrl/CILOGOSYMBOL';
 export default class ResgistrationFormHeaderFooter extends LightningElement {
     ciLogo = CILOGO;
     cilogoSymbol = CILOGOSYMBOL;
+
+    //Registration Form
+    /*
+        hideRegistrationForm = true;
+        getOTPForm = false;
+        isOTPVerified = false;
+        educationalDetailSubmitted = false;
+        handleNext() {
+            this.hideRegistrationForm = false;
+            this.getOTPForm = true;
+        }
+        verifyOTP() {
+            this.hideRegistrationForm = false;
+            this.isOTPVerified = true;
+            this.getOTPForm = false;
+        }
+    
+        submitEducationalDetails() {
+            this.isOTPVerified = false;
+            this.educationalDetailSubmitted = true;
+        }*/
 }

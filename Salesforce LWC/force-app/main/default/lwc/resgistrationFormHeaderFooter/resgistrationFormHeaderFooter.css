@@ -14,6 +14,9 @@
     padding-top: 5px;
     margin-left: 26px;
 }
+.contactsDetails{
+    margin-left: 2%;
+}
 .footerInfo1{
     display: flex;
     justify-content: flex-start;
@@ -23,17 +26,18 @@
 }
 .footerInfo2{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     padding-left: 99px;
     padding-top: 4px;
+    margin-right: 6%;
 }
 .footerInfo3{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     padding-left: 6%;
-    /* padding-top: 8px; */
+    margin-right: 6%;
 }
  svg{ 
     height: 40%;   
@@ -147,6 +151,20 @@
         width: 9%;
        
     }
+    .footerInfo2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 99px;
+        padding-top: 4px;
+    }
+    .footerInfo3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 6%;
+        /* padding-top: 8px; */
+    }
 }
 
 /* iPad 6th generation in landscape mode */
@@ -183,6 +201,21 @@
     svg{    
         height: 50%;
         width: 9%;
+       
+    }
+    .footerInfo2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 99px;
+        padding-top: 4px;
+       
+    }
+    .footerInfo3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 6%;
        
     }
 }

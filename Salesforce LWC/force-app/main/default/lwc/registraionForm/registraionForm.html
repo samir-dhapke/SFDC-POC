@@ -2,7 +2,7 @@
   @description       : 
   @author            : Samir Dhapke
   @group             : 
-  @last modified on  : 02-23-2024
+  @last modified on  : 03-13-2024
   @last modified by  : Samir Dhapke
   Modifications Log
   Ver   Date         Author         Modification
@@ -10,23 +10,23 @@
 -->
 <template>
     <lightning-card>
-            <!-- Registration Form -->
-            <!-- <h1 class="slds-align_absolute-center">Registration Form</h1> -->
-            <template lwc:if={hideRegistrationForm}>
+        <!-- Registration Form -->
+        <!-- <h1 class="slds-align_absolute-center">Registration Form</h1> -->
+        <template lwc:if={hideRegistrationForm}>
             <lightning-layout multiple-rows="true">
                 <lightning-layout-item padding="around-small" size="3">
                 </lightning-layout-item>
 
-                <lightning-layout-item padding="around-small" size="3">                 
-                        <lightning-input type="text" label="First Name"></lightning-input>  
-                        <lightning-input type="text" label="Email"></lightning-input> 
-                        <lightning-input type="text" label="City"></lightning-input>                                                             
+                <lightning-layout-item padding="around-small" size="3">
+                    <lightning-input type="text" label="First Name"></lightning-input>
+                    <lightning-input type="text" label="Email"></lightning-input>
+                    <lightning-input type="text" label="City"></lightning-input>
                 </lightning-layout-item>
-                
-                <lightning-layout-item padding="around-small" size="3">                 
-                    <lightning-input type="text" label="Last Name"></lightning-input>              
-                    <lightning-input type="number" label="Phone Number"></lightning-input> 
-                    <lightning-input type="text" label="Occupation"></lightning-input>               
+
+                <lightning-layout-item padding="around-small" size="3">
+                    <lightning-input type="text" label="Last Name"></lightning-input>
+                    <lightning-input type="number" label="Phone Number"></lightning-input>
+                    <lightning-input type="text" label="Occupation"></lightning-input>
                 </lightning-layout-item>
 
                 <lightning-layout-item padding="around-small" size="3">
@@ -34,50 +34,50 @@
 
             </lightning-layout>
             <!-- NEXT Button  -->
-                <lightning-layout multiple-rows="true">
-                    <lightning-layout-item padding="around-small" size="12">     
-                        <lightning-button variant="brand" label="Next" icon-name="utility:chevronright"
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="12">
+                    <lightning-button variant="brand" label="Next" icon-name="utility:chevronright"
                         class="slds-m-top_x-small slds-align_absolute-center" onclick={handleNext}>
-                        </lightning-button>
-                    </lightning-layout-item>
+                    </lightning-button>
+                </lightning-layout-item>
             </lightning-layout>
         </template>
         <!-- OTP Verification Form -->
         <template lwc:if={getOTPForm}>
-        <lightning-layout multiple-rows="true">
-            <lightning-layout-item padding="around-small" size="4">     
-            </lightning-layout-item>
-            <lightning-layout-item padding="around-small" size="4"> 
-                <lightning-input type="number" label="Email OTP"></lightning-input>  
-                <lightning-input type="number" label="Phone Number OTP"></lightning-input> 
-                <lightning-button variant="brand" label="Verify OTP" icon-name="utility:rotate"
-                class="slds-m-top_small slds-align_absolute-center" onclick={verifyOTP}>
-                </lightning-button>
-            </lightning-layout-item>
-            <lightning-layout-item padding="around-small" size="4">     
-            </lightning-layout-item>
-        </lightning-layout>
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="4">
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <lightning-input type="number" label="Email OTP"></lightning-input>
+                    <lightning-input type="number" label="Phone Number OTP"></lightning-input>
+                    <lightning-button variant="brand" label="Verify OTP" icon-name="utility:rotate"
+                        class="slds-m-top_small slds-align_absolute-center" onclick={verifyOTP}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                </lightning-layout-item>
+            </lightning-layout>
         </template>
         <!-- Educational Detail Form -->
         <template lwc:if={isOTPVerified}>
             <lightning-layout multiple-rows="true">
                 <lightning-layout-item padding="around-small" size="3">
                 </lightning-layout-item>
-    
-                <lightning-layout-item padding="around-small" size="3">                 
-                        <lightning-input type="text" label="UG Degree"></lightning-input>  
-                        <!-- <lightning-input type="text" label="PG Degree"></lightning-input>  -->
-                                                                             
+
+                <lightning-layout-item padding="around-small" size="3">
+                    <lightning-input type="text" label="UG Degree"></lightning-input>
+                    <!-- <lightning-input type="text" label="PG Degree"></lightning-input>  -->
+
                 </lightning-layout-item>
-                
-                <lightning-layout-item padding="around-small" size="3"> 
-                    <lightning-input type="number" label="Passout Graduation"></lightning-input>                           
+
+                <lightning-layout-item padding="around-small" size="3">
+                    <lightning-input type="number" label="Passout Graduation"></lightning-input>
                     <!-- <lightning-input type="text" label="Year Of Experience"></lightning-input>                -->
                 </lightning-layout-item>
-    
+
                 <lightning-layout-item padding="around-small" size="3">
                 </lightning-layout-item>
-    
+
             </lightning-layout>
             <lightning-layout multiple-rows="true">
                 <lightning-layout-item padding="around-small" size="4">
@@ -87,25 +87,25 @@
                 </lightning-layout-item>
                 <lightning-layout-item padding="around-small" size="4">
                 </lightning-layout-item>
-            </lightning-layout>  
+            </lightning-layout>
             <lightning-layout multiple-rows="true">
                 <lightning-layout-item padding="around-small" size="3">
                 </lightning-layout-item>
-    
-                <lightning-layout-item padding="around-small" size="3">                 
-                         
-                        <lightning-input type="text" label="PG Degree"></lightning-input> 
-                                                                             
+
+                <lightning-layout-item padding="around-small" size="3">
+
+                    <lightning-input type="text" label="PG Degree"></lightning-input>
+
                 </lightning-layout-item>
-                
-                <lightning-layout-item padding="around-small" size="3"> 
-                                             
-                    <lightning-input type="number" label="Passout Post Graduation"></lightning-input>               
+
+                <lightning-layout-item padding="around-small" size="3">
+
+                    <lightning-input type="number" label="Passout Post Graduation"></lightning-input>
                 </lightning-layout-item>
-    
+
                 <lightning-layout-item padding="around-small" size="3">
                 </lightning-layout-item>
-    
+
             </lightning-layout>
             <lightning-layout multiple-rows="true">
                 <lightning-layout-item padding="around-small" size="4">
@@ -115,48 +115,48 @@
                 </lightning-layout-item>
                 <lightning-layout-item padding="around-small" size="4">
                 </lightning-layout-item>
-            </lightning-layout> 
-             <!-- NEXT Button To Navigate Working  -->
-             <lightning-layout multiple-rows="true">
-                <lightning-layout-item padding="around-small" size="12">     
+            </lightning-layout>
+            <!-- NEXT Button To Navigate Working  -->
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="12">
                     <lightning-button variant="brand" label="Next" icon-name="utility:chevronright"
-                    class="slds-m-left_x-small slds-align_absolute-center" onclick={submitEducationalDetails}>
+                        class="slds-m-left_x-small slds-align_absolute-center" onclick={submitEducationalDetails}>
                     </lightning-button>
                 </lightning-layout-item>
-        </lightning-layout> 
+            </lightning-layout>
         </template>
 
-<template lwc:if={educationalDetailSubmitted}>
-     <!-- Student Working Details -->
-     <lightning-layout multiple-rows="true">
-        <lightning-layout-item padding="around-small" size="2">
-        </lightning-layout-item>
-        <lightning-layout-item padding="around-small" size="3">                    
-                <lightning-input type="text" label="Company Name"></lightning-input>                                                                   
-        </lightning-layout-item>     
-        <lightning-layout-item padding="around-small" size="3">                                    
-            <lightning-input type="text" label="Designation"></lightning-input>               
-        </lightning-layout-item>
-        <lightning-layout-item padding="around-small" size="2">
-            <lightning-input type="number" label="Years of Experience"></lightning-input>  
-        </lightning-layout-item>
-        <lightning-layout-item padding="around-small" size="2">
-        </lightning-layout-item>
+        <template lwc:if={educationalDetailSubmitted}>
+            <!-- Student Working Details -->
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="2">
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="3">
+                    <lightning-input type="text" label="Company Name"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="3">
+                    <lightning-input type="text" label="Designation"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="2">
+                    <lightning-input type="number" label="Years of Experience"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="2">
+                </lightning-layout-item>
 
-    </lightning-layout>
-    <lightning-layout multiple-rows="true">
-        <lightning-layout-item padding="around-small" size="2">
-        </lightning-layout-item>
-        <lightning-layout-item padding="around-small" size="8">                    
-                <lightning-input type="text" label="Additional Information"></lightning-input> 
-                <lightning-button variant="brand" label="Submit" 
-                class="slds-m-top_x-small slds-align_absolute-center" onclick={handleSubmit}>
-                </lightning-button>                                                                  
-        </lightning-layout-item>     
-        <lightning-layout-item padding="around-small" size="2">
-        </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="2">
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="8">
+                    <lightning-input type="text" label="Additional Information"></lightning-input>
+                    <lightning-button variant="brand" label="Submit"
+                        class="slds-m-top_x-small slds-align_absolute-center" onclick={handleSubmit}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="2">
+                </lightning-layout-item>
 
-    </lightning-layout>
-</template>
+            </lightning-layout>
+        </template>
     </lightning-card>
 </template>
