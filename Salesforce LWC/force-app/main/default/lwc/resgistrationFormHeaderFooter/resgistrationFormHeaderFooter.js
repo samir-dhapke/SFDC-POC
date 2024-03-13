@@ -11,28 +11,30 @@
 import { LightningElement } from 'lwc';
 import CILOGO from '@salesforce/resourceUrl/CILOGO';
 import CILOGOSYMBOL from '@salesforce/resourceUrl/CILOGOSYMBOL';
+
+
 export default class ResgistrationFormHeaderFooter extends LightningElement {
     ciLogo = CILOGO;
     cilogoSymbol = CILOGOSYMBOL;
 
     //Registration Form
-    /*
-        hideRegistrationForm = true;
-        getOTPForm = false;
-        isOTPVerified = false;
-        educationalDetailSubmitted = false;
-        handleNext() {
-            this.hideRegistrationForm = false;
-            this.getOTPForm = true;
-        }
-        verifyOTP() {
-            this.hideRegistrationForm = false;
-            this.isOTPVerified = true;
-            this.getOTPForm = false;
-        }
-    
-        submitEducationalDetails() {
-            this.isOTPVerified = false;
-            this.educationalDetailSubmitted = true;
-        }*/
+
+    hideRegistrationForm = true;
+    getOTPForm = false;
+    isOTPVerified = false;
+    educationalDetailSubmitted = false;
+    handleNext() {
+        this.hideRegistrationForm = false;
+        this.getOTPForm = true;
+    }
+    verifyOTP() {
+        this.hideRegistrationForm = false;
+        this.isOTPVerified = true;
+        this.getOTPForm = false;
+    }
+
+    submitEducationalDetails() {
+        this.isOTPVerified = false;
+        this.educationalDetailSubmitted = true;
+    }
 }

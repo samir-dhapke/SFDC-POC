@@ -9,7 +9,7 @@
   1.0   02-27-2024   Samir Dhapke   Initial Version
 -->
 <template>
- 
+
   <lightning-card>
     <!-- Header -->
     <lightning-layout multiple-rows="true">
@@ -19,25 +19,173 @@
       <lightning-layout-item padding="around-small" size="4">
         <img src={ciLogo}>
       </lightning-layout-item>
-    
+
       <lightning-layout-item padding="around-small" size="1">
         <div class="rectangle"></div>
       </lightning-layout-item>
-    
+
       <lightning-layout-item padding="around-small" size="1" class="slds">
         <div class="rectanglee"></div>
       </lightning-layout-item>
-    
+
       <lightning-layout-item padding="around-small" size="5">
         <div class="rectangle1"></div>
       </lightning-layout-item>
     </lightning-layout>
+    
+    <!-- Registration Form -->
+    <template lwc:if={hideRegistrationForm}>
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="3">
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-input type="text" label="First Name"></lightning-input>
+          <lightning-input type="text" label="Email"></lightning-input>
+          <lightning-input type="text" label="City"></lightning-input>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-input type="text" label="Last Name"></lightning-input>
+          <lightning-input type="number" label="Phone Number"></lightning-input>
+          <lightning-input type="text" label="Occupation"></lightning-input>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="3">
+        </lightning-layout-item>
+
+      </lightning-layout>
+      <!-- NEXT Button  -->
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="12">
+          <lightning-button variant="brand" label="Next" icon-name="utility:chevronright"
+            class="slds-m-top_x-small slds-align_absolute-center" onclick={handleNext}>
+          </lightning-button>
+        </lightning-layout-item>
+      </lightning-layout>
+    </template>
+    <!-- OTP Verification Form -->
+    <template lwc:if={getOTPForm}>
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="4">
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="4">
+          <lightning-input type="number" label="Email OTP"></lightning-input>
+          <lightning-input type="number" label="Phone Number OTP"></lightning-input>
+          <lightning-button variant="brand" label="Verify OTP" icon-name="utility:rotate"
+            class="slds-m-top_small slds-align_absolute-center" onclick={verifyOTP}>
+          </lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="4">
+        </lightning-layout-item>
+      </lightning-layout>
+    </template>
+    <!-- Educational Detail Form -->
+    <template lwc:if={isOTPVerified}>
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="3">
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-input type="text" label="UG Degree"></lightning-input>
+          <!-- <lightning-input type="text" label="PG Degree"></lightning-input>  -->
+
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-input type="number" label="Passout Graduation"></lightning-input>
+          <!-- <lightning-input type="text" label="Year Of Experience"></lightning-input>                -->
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="3">
+        </lightning-layout-item>
+
+      </lightning-layout>
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="4">
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="4">
+          <lightning-input type="text" label="If Other"></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="4">
+        </lightning-layout-item>
+      </lightning-layout>
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="3">
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="3">
+
+          <lightning-input type="text" label="PG Degree"></lightning-input>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="3">
+
+          <lightning-input type="number" label="Passout Post Graduation"></lightning-input>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="3">
+        </lightning-layout-item>
+
+      </lightning-layout>
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="4">
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="4">
+          <lightning-input type="text" label="If Other"></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="4">
+        </lightning-layout-item>
+      </lightning-layout>
+      <!-- NEXT Button To Navigate Working  -->
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="12">
+          <lightning-button variant="brand" label="Next" icon-name="utility:chevronright"
+            class="slds-m-left_x-small slds-align_absolute-center" onclick={submitEducationalDetails}>
+          </lightning-button>
+        </lightning-layout-item>
+      </lightning-layout>
+    </template>
+     <!-- Student Working Details -->
+    <template lwc:if={educationalDetailSubmitted}>
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="2">
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-input type="text" label="Company Name"></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="3">
+          <lightning-input type="text" label="Designation"></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="2">
+          <lightning-input type="number" label="Years of Experience"></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="2">
+        </lightning-layout-item>
+
+      </lightning-layout>
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="2">
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="8">
+          <lightning-input type="text" label="Additional Information"></lightning-input>
+          <lightning-button variant="brand" label="Submit" class="slds-m-top_x-small slds-align_absolute-center"
+            onclick={handleSubmit}>
+          </lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="2">
+        </lightning-layout-item>
+
+      </lightning-layout>
+    </template>
+
     <!-- Footer -->
     <lightning-layout multiple-rows="true">
       <lightning-layout-item padding="around-small" class="slds-p-left_medium" size="6">
         <div class="rectangle2">
           <div class="footerInfo">
-             <svg style="color: white;" xmlns="http://www.w3.org/2000/svg"
+            <svg style="color: white;" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
               <path
                 d="M304 0h-224c-35.35 0-64 28.65-64 64v384c0 35.35 28.65 64 64 64h224c35.35 0 64-28.65 64-64V64C368 28.65 339.3 0 304 0zM192 480c-17.75 0-32-14.25-32-32s14.25-32 32-32s32 14.25 32 32S209.8 480 192 480zM304 64v320h-224V64H304z"
@@ -48,10 +196,10 @@
               9860183175 <br>
               8766996944
             </div>
-    
+
           </div>
           <div class="footerInfo1">
-            
+
             <svg style="color: white;padding-left: 5px;" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
               fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
               <path
@@ -59,14 +207,14 @@
                 fill="white">
               </path>
             </svg>
-          
-          <div class="contactsDetails">
-            info@cloudintellect.in
-          </div>
+
+            <div class="contactsDetails">
+              info@cloudintellect.in
+            </div>
           </div>
         </div>
       </lightning-layout-item>
-    
+
       <lightning-layout-item padding="around-small" size="6">
         <div class="rectangle3">
           <div class="footerInfo2">
@@ -76,7 +224,7 @@
               <path
                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
             </svg>
-    
+
           </div>
           <div class="footerInfo3">
             Plot No.5, Sanjay Heights,Beltarodi <br>
