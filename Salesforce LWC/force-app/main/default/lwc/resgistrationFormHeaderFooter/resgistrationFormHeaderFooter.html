@@ -2,7 +2,7 @@
   @description       : 
   @author            : Samir Dhapke
   @group             : 
-  @last modified on  : 03-13-2024
+  @last modified on  : 03-15-2024
   @last modified by  : Samir Dhapke
   Modifications Log
   Ver   Date         Author         Modification
@@ -32,7 +32,7 @@
         <div class="rectangle1"></div>
       </lightning-layout-item>
     </lightning-layout>
-    
+
     <!-- Registration Form -->
     <template lwc:if={hideRegistrationForm}>
       <lightning-layout multiple-rows="true">
@@ -40,15 +40,15 @@
         </lightning-layout-item>
 
         <lightning-layout-item padding="around-small" size="3">
-          <lightning-input type="text" label="First Name"></lightning-input>
-          <lightning-input type="text" label="Email"></lightning-input>
-          <lightning-input type="text" label="City"></lightning-input>
+          <lightning-input type="text" name="fName" label="First Name" onchange={handleChange}></lightning-input>
+          <lightning-input type="text" name="email" label="Email" onchange={handleChange}></lightning-input>
+          <lightning-input type="text" name="city" label="City" onchange={handleChange}></lightning-input>
         </lightning-layout-item>
 
         <lightning-layout-item padding="around-small" size="3">
-          <lightning-input type="text" label="Last Name"></lightning-input>
-          <lightning-input type="number" label="Phone Number"></lightning-input>
-          <lightning-input type="text" label="Occupation"></lightning-input>
+          <lightning-input type="text" name="lName" label="Last Name" onchange={handleChange}></lightning-input>
+          <lightning-input type="number" min="0" max="10" name="phoneNumber" label="Phone Number" onchange={handleChange}></lightning-input>
+          <lightning-input type="text" name="occupation" label="Occupation" onchange={handleChange}></lightning-input>
         </lightning-layout-item>
 
         <lightning-layout-item padding="around-small" size="3">
@@ -70,8 +70,8 @@
         <lightning-layout-item padding="around-small" size="4">
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="4">
-          <lightning-input type="number" label="Email OTP"></lightning-input>
-          <lightning-input type="number" label="Phone Number OTP"></lightning-input>
+          <lightning-input type="number" name="emailOtp" label="Email OTP"></lightning-input>
+          <lightning-input type="number" name="phoneOtp" label="Phone Number OTP"></lightning-input>
           <lightning-button variant="brand" label="Verify OTP" icon-name="utility:rotate"
             class="slds-m-top_small slds-align_absolute-center" onclick={verifyOTP}>
           </lightning-button>
@@ -87,13 +87,13 @@
         </lightning-layout-item>
 
         <lightning-layout-item padding="around-small" size="3">
-          <lightning-input type="text" label="UG Degree"></lightning-input>
+          <lightning-input type="text" name="ugDegree" label="UG Degree"></lightning-input>
           <!-- <lightning-input type="text" label="PG Degree"></lightning-input>  -->
 
         </lightning-layout-item>
 
         <lightning-layout-item padding="around-small" size="3">
-          <lightning-input type="number" label="Passout Graduation"></lightning-input>
+          <lightning-input type="number" name="passoutUg" label="Passout Graduation"></lightning-input>
           <!-- <lightning-input type="text" label="Year Of Experience"></lightning-input>                -->
         </lightning-layout-item>
 
@@ -105,7 +105,7 @@
         <lightning-layout-item padding="around-small" size="4">
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="4">
-          <lightning-input type="text" label="If Other"></lightning-input>
+          <lightning-input type="text" name="ifOtherUgDeg" label="If Other"></lightning-input>
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="4">
         </lightning-layout-item>
@@ -116,13 +116,13 @@
 
         <lightning-layout-item padding="around-small" size="3">
 
-          <lightning-input type="text" label="PG Degree"></lightning-input>
+          <lightning-input type="text" name="pgDegree" label="PG Degree"></lightning-input>
 
         </lightning-layout-item>
 
         <lightning-layout-item padding="around-small" size="3">
 
-          <lightning-input type="number" label="Passout Post Graduation"></lightning-input>
+          <lightning-input type="number" name="passoutPg" label="Passout Post Graduation"></lightning-input>
         </lightning-layout-item>
 
         <lightning-layout-item padding="around-small" size="3">
@@ -133,7 +133,7 @@
         <lightning-layout-item padding="around-small" size="4">
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="4">
-          <lightning-input type="text" label="If Other"></lightning-input>
+          <lightning-input type="text" name="ifOtherPgDeg" label="If Other"></lightning-input>
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="4">
         </lightning-layout-item>
@@ -153,13 +153,13 @@
         <lightning-layout-item padding="around-small" size="2">
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="3">
-          <lightning-input type="text" label="Company Name"></lightning-input>
+          <lightning-input type="text" name="companyName" label="Company Name"></lightning-input>
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="3">
-          <lightning-input type="text" label="Designation"></lightning-input>
+          <lightning-input type="text" name="designation" label="Designation"></lightning-input>
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="2">
-          <lightning-input type="number" label="Years of Experience"></lightning-input>
+          <lightning-input type="number" name="yearsOfExp" label="Years of Experience"></lightning-input>
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="2">
         </lightning-layout-item>
@@ -169,7 +169,7 @@
         <lightning-layout-item padding="around-small" size="2">
         </lightning-layout-item>
         <lightning-layout-item padding="around-small" size="8">
-          <lightning-input type="text" label="Additional Information"></lightning-input>
+          <lightning-input type="text" name="addInfo" label="Additional Information"></lightning-input>
           <lightning-button variant="brand" label="Submit" class="slds-m-top_x-small slds-align_absolute-center"
             onclick={handleSubmit}>
           </lightning-button>
