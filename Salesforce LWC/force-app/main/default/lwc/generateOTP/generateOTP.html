@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 03-15-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   03-15-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <lightning-card title="Generate OTP" icon-name="custom:custom14">
+        <div class="slds-var-p-around_small">
+            <lightning-button 
+                        variant="brand" 
+                        label="Generate OTP" 
+                        onclick={handleClick}
+                        disabled={disabledButton}>
+            </lightning-button>
+        </div>
+        <div class="slds-var-p-around_small">
+           <p class="slds-text-heading_large">{generatedOtpValue}</p>
+        </div>
+        <template lwc:if={showTimer}>
+            <div class="slds-var-p-around_small">
+                <p class="slds-text-color_error slds-text-heading_medium">{textTimer}</p>
+             </div>
+        </template>
+       
+    </lightning-card>
+</template>
