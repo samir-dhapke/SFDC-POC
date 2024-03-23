@@ -18,5 +18,11 @@ public class FlowClassCI10B {
     Public static List<Account> getAccountDetails2(List<String> name){
         string accName=name[0];
          return [Select Id,Name from Account Where Name=:accName];
+        
+    }
+     Public static void getAccountDetails22(){
+       
+        Account acc = new Account();
+        system.debug('acc'+acc.Name);
     }
 }

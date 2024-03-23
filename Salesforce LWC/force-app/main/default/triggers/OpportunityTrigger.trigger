@@ -11,12 +11,13 @@ trigger OpportunityTrigger on Opportunity (before insert, before update,after in
     
     if(Trigger.isAfter){
         if(Trigger.isInsert){
-            
+            OpportunityTriggerHabdker.shareContacts(Trigger.new);
         }  
         if(Trigger.isUpdate){
             /*Task - if opportunity's probability is more than 50% then mark account as vip.
 					Note:  Vip will be custom field on account*/
           //  OpportunityTriggerHabdker.updateVIPAccount(Trigger.new);
+           OpportunityTriggerHabdker.shareContacts(Trigger.new);
         }
     }
 }

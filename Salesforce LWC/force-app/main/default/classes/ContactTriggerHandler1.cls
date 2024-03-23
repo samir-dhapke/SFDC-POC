@@ -1,7 +1,8 @@
 public class ContactTriggerHandler1 {
+     //********************************Before*******************************
     //Insert Contact but phone is Empty then Copy Account Phone That you are selected.
     Public static void updateContactPhoneNumber(List<Contact> conList){
-         Set<Id> accIds = new Set<Id>();
+        Set<Id> accIds = new Set<Id>();
         for(Contact c:conList){
             if(c.AccountId!=null && c.Phone==null){
                 accIds.add(c.AccountId);
@@ -12,7 +13,7 @@ public class ContactTriggerHandler1 {
             accMap.put(cc.Id,cc.Phone);
         }
         for(Contact c:conList){
-            if(accMap.containskey(c.AccountId) && c.AccountId!=null && c.Phone==null ){
+            if(accMap.containskey(c.AccountId)){
                 c.Phone=accMap.get(c.AccountId);
             }
         }
@@ -25,74 +26,6 @@ public class ContactTriggerHandler1 {
                 c.Level__c='Secondary';
             }
         }
-    }
-    Public static void updateBalanceOnAccountContact2(List<Contact> conList){
-        Set<Id> accIds = new Set<Id>();
-        for(Contact c:conList){
-            if(c.AccountId!=null){
-                accIds.add(c.AccountId);
-            }
-        }
-        system.debug('accIds ==>>'+accIds);
-        
-        List<Account> accList = new List<Account>([
-            Select 
-            	Id,(Select Id,Transection_Type__c,Amount__c from Contacts where Amount__c!=null) 
-            from 
-            	Account 
-            where 
-            	Id IN:accIds
-        ]);
-         system.debug('accList ==>>'+accList);
-        
-        for(Account acc:accList){
-            decimal bal=0;
-            for(Contact con:acc.Contacts){
-                 system.debug('Transection_Type__c ==>>'+con.Transection_Type__c);
-                if(con.Transection_Type__c=='Deposit'){
-                    bal=bal+con.Amount__c;
-                }
-                else if(con.Transection_Type__c=='withdraw'){
-                    bal=bal-con.Amount__c;
-                }
-            }
-             system.debug('bal ==>>'+bal);
-            acc.Balance__c=bal;
-        }
-        system.debug('After Transection accList ==>>'+accList);
-        update accList;
-    }
-    Public static void updateBalanceOnAccountContact1(List<Contact> conList){
-        Set<Id> accIds = new Set<Id>();
-        for(Contact c:conList){
-            if(c.AccountId!=null){
-                accIds.add(c.AccountId);
-            }
-        }
-        
-        List<Account> accList = new List<Account>([
-            Select 
-            	Id,(Select Id,Transection_Type__c,Amount__c from Contacts where Amount__c!=null) 
-            from 
-            	Account 
-            where 
-            	Id IN:accIds
-        ]);
-        
-       
-        for(Account acc:accList){
-             decimal bal=0;
-            for(Contact con:acc.Contacts){
-                if(con.Transection_Type__c=='Deposit'){
-                    bal=bal+con.Amount__c;
-                }
-                else if(con.Transection_Type__c=='withdraw'){
-                      bal=bal-con.Amount__c;
-                }
-            }
-            acc.Balance__c=bal;
-        }
-        update accList;
     }
     Public static void associateAccountWithContact(List<Contact> conList){
         List<Account> accList = new List<Account>();
@@ -196,5 +129,78 @@ public class ContactTriggerHandler1 {
                 validateContacts.addError('Duplicate Contacts !!!!');
             }
         }
-    }    
+    }  
+    
+    //********************************AFTER*******************************
+    Public static void updateTotalAmountOnAccount(List<Contact> conList,map<Id,Contact> oldMap){
+       
+    }
+    Public static void updateBalanceOnAccountContact2(List<Contact> conList){
+        Set<Id> accIds = new Set<Id>();
+        for(Contact c:conList){
+            if(c.AccountId!=null){
+                accIds.add(c.AccountId);
+            }
+        }
+        system.debug('accIds ==>>'+accIds);
+        
+        List<Account> accList = new List<Account>([
+            Select 
+            Id,(Select Id,Transection_Type__c,Amount__c from Contacts where Amount__c!=null) 
+            from 
+            Account 
+            where 
+            Id IN:accIds
+        ]);
+        system.debug('accList ==>>'+accList);
+        
+        for(Account acc:accList){
+            decimal bal=0;
+            for(Contact con:acc.Contacts){
+                system.debug('Transection_Type__c ==>>'+con.Transection_Type__c);
+                if(con.Transection_Type__c=='Deposit'){
+                    bal=bal+con.Amount__c;
+                }
+                else if(con.Transection_Type__c=='withdraw'){
+                    bal=bal-con.Amount__c;
+                }
+            }
+            system.debug('bal ==>>'+bal);
+            acc.Balance__c=bal;
+        }
+        system.debug('After Transection accList ==>>'+accList);
+        update accList;
+    }
+    Public static void updateBalanceOnAccountContact1(List<Contact> conList){
+        Set<Id> accIds = new Set<Id>();
+        for(Contact c:conList){
+            if(c.AccountId!=null){
+                accIds.add(c.AccountId);
+            }
+        }
+        
+        List<Account> accList = new List<Account>([
+            Select 
+            Id,(Select Id,Transection_Type__c,Amount__c from Contacts where Amount__c!=null) 
+            from 
+            Account 
+            where 
+            Id IN:accIds
+        ]);
+        
+        
+        for(Account acc:accList){
+            decimal bal=0;
+            for(Contact con:acc.Contacts){
+                if(con.Transection_Type__c=='Deposit'){
+                    bal=bal+con.Amount__c;
+                }
+                else if(con.Transection_Type__c=='withdraw'){
+                    bal=bal-con.Amount__c;
+                }
+            }
+            acc.Balance__c=bal;
+        }
+        update accList;
+    }
 }

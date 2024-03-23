@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Samir Dhapke
  * @group             : 
- * @last modified on  : 03-15-2024
+ * @last modified on  : 03-16-2024
  * @last modified by  : Samir Dhapke
  * Modifications Log
  * Ver   Date         Author         Modification
@@ -19,12 +19,13 @@ export default class GenerateOTP extends LightningElement {
     textTimer = "";
     handleClick() {
         //Math.random() - greater than 0, less than 1
-        //Math.floore - final integer Value
+        //Math.floor - final integer Value
         //1. What should be the length Of OTP
         let otpArrey = [];
         for (let i = 0; i < this.otpLength; i++) {
             otpArrey.push(Math.floor(Math.random() * 10));
         }
+
         this.generatedOtpValue = otpArrey.join('');
         //this.generatedOtpValue = Math.floor(Math.random() * 10000000)
 

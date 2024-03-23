@@ -29,11 +29,13 @@ trigger ContactTrigger1 on Contact (before insert,before Update) {
         }
     if(trigger.isAfter){        
         if(trigger.isInsert){
-           		 /* 1. After Contact is creating and Updating then update Account Balance Field.
+           		 /* 
+           		  * 1. After Contact is creating and Updating then update Account Balance Field.
 					ContactTriggerHandler1.updateBalanceOnAccountContact1(trigger.new);
 					another way
-            ContactTriggerHandler1.updateBalanceOnAccountContact2(trigger.new); 
-				2. 																*/
+           			 ContactTriggerHandler1.updateBalanceOnAccountContact2(trigger.new);
+					
+				 																*/
         }
         if(trigger.isUpdate){
             

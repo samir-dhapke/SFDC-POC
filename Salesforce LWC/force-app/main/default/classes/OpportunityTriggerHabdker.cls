@@ -1,5 +1,30 @@
 public class OpportunityTriggerHabdker {
-    
+    /*	If Probability of Opportunity is grater that 80 percent then and provide edit access to the 
+        opportunity owner for all the contacts belongs to Account.*/
+    Public Static void shareContacts(List<Opportunity> newList){
+       Map<Id,Id> mapWithOwnerId= new  Map<Id,Id>();
+        for(Opportunity opp:newList){				
+            if(opp.Probability>80 && opp.AccountId!=null){               
+                mapWithOwnerId.put(opp.AccountId,opp.ownerId);
+            }            
+        } 
+        	
+        List<Contact> conList= [Select Id,AccountId from Contact Where AccountId IN:mapWithOwnerId.keySet()];
+        List<ContactShare> shareContactRecords = new List<ContactShare>();
+            
+        for(Contact con:conList){
+            ContactShare conShare= new ContactShare();
+            conShare.ContactId=con.Id;
+            conShare.UserOrGroupId = mapWithOwnerId.get(con.AccountId);
+            conShare.RowCause = 'Manual';
+            conShare.ContactAccessLevel='Edit';
+            shareContactRecords.add(conShare);     		                 		
+        }
+        system.debug('shareContactRecords '+shareContactRecords);
+        
+            Insert shareContactRecords;
+       
+    }
    
     // when Probability of Opportunity is Greater than 50% and Account Industry is 'Technology'
     // then update stage of Opportunity is 'Need Analysis'
