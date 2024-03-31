@@ -1,0 +1,36 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 03-31-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   03-31-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <div class="certification_div">
+        <div class="certificate_title">
+            Certifications 
+        </div>
+        <lightning-layout multiple-rows class="slds-align_absolute-center cards_section">
+        <template lwc:if={certificationData}>
+            <template for:each={certificationData} for:item="cert">
+                <lightning-layout-item padding='around-small' key={cert.id} class="slds-align_absolute-center" size="12"
+                    medium-device-size="6" large-device-size="3">
+                    <div class="card">
+                        <dic class="card-body">
+                            <div class="card_image">
+                                <img src={cert.image}/>
+                            </div>
+                            <h1 class="card-title">{cert.name}</h1>
+                            <p class="card-text">{cert.date}</p>
+                            <p class="card-text">{cert.certId}</p>
+                        </dic>
+                    </div>
+                </lightning-layout-item>
+            </template>
+        </template>
+        </lightning-layout>
+    </div>
+</template>
