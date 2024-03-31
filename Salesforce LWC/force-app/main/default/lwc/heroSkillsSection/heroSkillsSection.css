@@ -1,0 +1,37 @@
+.about_div {
+    background-color: white;
+}
+
+.skills_div {
+    padding-top: 20px;
+}
+
+.para_text {
+    font-family: serif;
+    font-size: 15px;
+    font-weight: 300;
+    word-spacing: 2px;
+}
+
+.profile_title{
+margin-bottom: 20px;
+font-weight: 800;
+border-bottom: 4px solid #A020f0;
+border-bottom-width: thick;
+width: 70px;
+}
+.profile_title h1{
+    font-size: 30px;
+    font-weight: 800;
+    color: black;
+}
+.profile_pic img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    height: auto;
+    width: 100%;
+    margin: 0 0px 0 65px;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,33 @@
+.quickLinks h1 {
+    font-size: 1.5rem;
+    color: #B0B0B0;
+    text-decoration: underline;
+}
+
+.image_section img {
+    height: 10rem;
+    width: 22vw;
+    background-size: cover;
+   /* margin-top: 2rem;
+      */
+      border-radius: 0.5rem;
+}
+
+.image_section {
+    position: relative;
+    cursor: pointer;
+}
+
+.title_class {
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+}
+.overlay{
+    position: absolute;
+    height: 10rem;
+    width: 22vw;
+    opacity: 0.6;
+    background: black;
+    border-radius: 0.5rem;
+}

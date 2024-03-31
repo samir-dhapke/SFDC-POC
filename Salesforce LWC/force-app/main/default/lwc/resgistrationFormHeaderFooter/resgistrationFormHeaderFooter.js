@@ -13,8 +13,7 @@ import CILOGO from '@salesforce/resourceUrl/CILOGO';
 import CILOGOSYMBOL from '@salesforce/resourceUrl/CILOGOSYMBOL';
 import sendOTP from "@salesforce/apex/ApexIntegrationController.sendOTP";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import createLeadRecord from '@salesforce/apex/ApexIntegrationController.createLead';
-
+//import createLeadRecord from '@salesforce/apex/ApexIntegrationController.createLead';
 
 export default class ResgistrationFormHeaderFooter extends LightningElement {
     ciLogo = CILOGO;
@@ -45,7 +44,7 @@ export default class ResgistrationFormHeaderFooter extends LightningElement {
     passoutPg;
 
     //Student Working Details Properties
-    static companyName;
+    companyName;
     designation;
     yearsOfExp;
     addInfo;
@@ -249,9 +248,9 @@ export default class ResgistrationFormHeaderFooter extends LightningElement {
         createLeadRecord({ lWrapper: passWrapper })
             .then(result => {
                 console.log('Data:' + JSON.stringify(result));
+                this.showToastMessage('Success', 'Student has been Registered Successfully!', 'success');
             }).catch(error => {
-                console.log(error);
-                this.error = error;
+                this.showToastMessage('Error', 'Student Registration Failed!', 'error');
             });
     }
 

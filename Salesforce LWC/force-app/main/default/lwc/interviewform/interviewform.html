@@ -1,0 +1,245 @@
+<template>
+<div class="slds-m-top_none">
+    <div class="slds-m-left_xxx-small">
+    <div class="refresh page">
+    <div class="slds-align_absolute-center">
+    <div class="a4-page" >
+        <div class="responsive-content">
+                <div class="custom-card">
+    <lightning-card>
+        
+        <lightning-layout class="slds-align_absolute-center">
+            
+            <h1 class="main-headline"><B>Interview Form </B></h1>
+        </lightning-layout>
+        <div class="horizontal-line"></div>
+
+        <lightning-layout>
+            <lightning-layout-item size="9"  padding="around-small">
+        <lightning-record-edit-form object-api-name="Interview__c">
+            <div class="slds-grid slds-gutters">
+              <div class="slds-col">
+                <lightning-input-field field-name="Student__c" value={Accountvalue} onchange={handleAccountRemarksChange}></lightning-input-field>
+              </div>
+            </div>
+          </lightning-record-edit-form>
+        </lightning-layout-item>
+        </lightning-layout>
+
+
+         <lightning-layout>
+           
+            <lightning-layout-item size="6"  padding="around-small">
+               
+                <template if:true={interviewer_optiontion.data}>
+                    <lightning-combobox
+                                 label="Interviewer"
+                                 value={Interviewervalue}
+                                 placeholder="-Select-"
+                                options={interviewer_optiontion.data.values}
+                               onchange={handleInterviewerChange} ></lightning-combobox>
+                    </template>
+           
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6"  padding="around-small">
+                <lightning-input label="Interview Date " type="Date" value={InterviewDatevalue} onchange={handleInterviewDateChange} ></lightning-input>
+            </lightning-layout-item>
+            
+        </lightning-layout>
+
+        <hr> <h2 class="main-headline1"> Admin</h2>
+        <lightning-layout>
+                  
+           <lightning-layout-item size="5"  padding="around-small">
+              
+               <template if:true={Admin_Rating_optiontion.data}>
+                   <lightning-combobox
+                                label="Admin Rating"
+                                value={AdminRatingvalue}
+                                placeholder="-Select-"
+                               options={Admin_Rating_optiontion.data.values}
+                              onchange={handleAdminRatingChange} ></lightning-combobox>
+                   </template>
+          
+           </lightning-layout-item>
+
+           <lightning-layout-item size="5"  padding="around-small">
+            <lightning-input label="Admin Remarks" type="log text area" value={Admin_RemarksArea} onchange={handleAdminRemarksChange}></lightning-input>
+        </lightning-layout-item>
+   
+        <lightning-layout-item size="2" padding="around-small">
+            <div class="slds-p-top_large">
+            <lightning-button label="Add Q" onclick={addPlus} ></lightning-button>
+        </div>
+        </lightning-layout-item> 
+        
+           </lightning-layout>
+
+           <template if:true={showSecondInput}>
+        <lightning-layout>
+            
+            <lightning-layout-item size="5"  padding="around-small">
+                <lightning-input label="Admin Questions" type="search" value={AdminAns} onchange={handleKeyChange}></lightning-input>
+                
+               <div if:true={messageResult} class="slds-p-horizontal_small">
+                <p class="slds-text-color_error">No Result Found!</p>
+               </div>
+            
+            <template if:true={showSerachedValues}>
+                <div class="slds-p-horizontal_small">
+                    <ul class="slds-list_vertical-space">
+                        <template for:each={accountList} for:item="actObj">
+                            <li key={actObj.Id} onclick={handleParentSelection} data-value={actObj.Id} data-label={actObj.Admin_Question__c}
+                                class="slds-p-around_small slds-text-link" style="cursor: pointer;">
+                                      {actObj.Admin_Question__c}
+                            </li>
+                        </template>
+                    </ul>
+            
+                    
+                </div>
+            </template>
+            
+           
+               
+            
+                <!--<template if:true={getacc.data}>
+                    <template for:each={getacc.data}  for:item="abc">
+                        <li key={abc.id} onclick={handelerselect} data-value={abc.id} data-label={abc.Questionsa_ans__c}>{abc.Questionsa_ans__c}</li>
+                    </template>
+                    </template>-->
+            </lightning-layout-item>
+            <lightning-layout-item size="5"  padding="around-small">
+                <lightning-input label="Admin Remark" type="log text area" value={AdminQuestions} onchange={handleAdminQuestionssChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="2" padding="around-small">
+                <div class="slds-p-top_large">
+                <lightning-button label="Add Q" onclick={addPlus1a} ></lightning-button>
+            </div>
+            </lightning-layout-item> 
+        </lightning-layout>
+            </template>
+           
+            <template if:true={showSecondInput1}>
+                <lightning-layout>
+                    <lightning-layout-item size="5"  padding="around-small">
+                        <lightning-input label="Admin Questions" type="search" value={AdminAns1} onchange={handleKeyChange1}></lightning-input>
+                        
+                       <div if:true={messageResult1} class="slds-p-horizontal_small">
+                        <p class="slds-text-color_error">No Result Found 1!</p>
+                       </div>
+                    
+                <template if:true={showSerachedValuesrt}>
+                        <div class="slds-p-horizontal_small">
+                            <ul class="slds-list_vertical-space">
+                                <template for:each={leaddata} for:item="actObj1">
+                                    <li key={actObj1.Id} onclick={handleParentSelectionoption} data-value={actObj1.Id} data-label={actObj1.Admin_Question__c}
+                                        class="slds-p-around_small slds-text-link" style="cursor: pointer;">
+                                              {actObj1.Admin_Question__c}
+                                    </li>
+                                </template>
+                            </ul>
+                    
+                            
+                        </div>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item size="5"  padding="around-small">
+                <lightning-input label="Admin Remark" type="log text area" value={AdminQuestions} onchange={handleAdminQuestionssChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="2" padding="around-small">
+                <div class="slds-p-top_large">
+                <lightning-button label="Add Q" onclick={addPlus} ></lightning-button>
+            </div>
+            </lightning-layout-item> 
+        </lightning-layout>
+            </template>
+            <!--<lightning-layout>
+                <template if:true={showSecondInput1}>
+                    <lightning-layout-item size="5"  padding="around-small">
+                    <lightning-input label="Other Questions"></lightning-input>
+                </lightning-layout-item>
+                </template>
+            </lightning-layout>-->
+    
+
+          
+            
+
+
+           <hr> <h3 class="main-headline1">Apex</h3>
+        <lightning-layout>
+                  
+           <lightning-layout-item size="5"  padding="around-small">
+              
+               <template if:true={Apex_Rating_optiontion.data}>
+                   <lightning-combobox
+                                label="Apex Rating"
+                                value={ApexRatingvalue}
+                                placeholder="-Select-"
+                               options={Apex_Rating_optiontion.data.values}
+                              onchange={handleApexnRatingChange} ></lightning-combobox>
+                   </template>
+          
+           </lightning-layout-item>
+
+           <lightning-layout-item size="5"  padding="around-small">
+            <lightning-input label="Apex Remarks" type="log text area" value={ApexRemarksArea} onchange={handleApexRemarksChange}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="2" padding="around-small">
+            <div class="slds-p-top_large">
+            <lightning-button label="Add Q" onclick={addPlus1} ></lightning-button>
+        </div>
+        </lightning-layout-item>
+           </lightning-layout>
+           
+
+           <hr> <h3 class="main-headline1">LWC</h3>
+           <lightning-layout>
+                     
+              <lightning-layout-item size="6"  padding="around-small">
+                 
+                  <template if:true={LWC_Rating_optiontion.data}>
+                      <lightning-combobox
+                                   label="LWC Rating"
+                                   value={LWCRatingvalue}
+                                   placeholder="-Select-"
+                                  options={LWC_Rating_optiontion.data.values}
+                                 onchange={handleLWCRatingChange} ></lightning-combobox>
+                      </template>
+             
+              </lightning-layout-item>
+   
+              <lightning-layout-item size="6"  padding="around-small">
+                <lightning-input label="LWC Remarks" type="log text area" value={LWCRemarksArea} onchange={handleLWCRemarksChange}></lightning-input>
+           </lightning-layout-item>
+              </lightning-layout>
+              <hr> <h3 class="main-headline1">Overall Feedback</h3>
+
+              <lightning-layout size="12">
+                     
+                <lightning-layout-item size="12" padding="around-small" >
+                   
+              <lightning-input label="Overall Feedback" type="log text area" value={OverallFeedbackvalue} onchange={handleOverallChange}></lightning-input>
+                </lightning-layout-item>
+                </lightning-layout>
+                
+<!--<div class="horizontal-line"></div>-->
+
+              <p slot="footer"  class="slds-align_absolute-center" >
+                <lightning-layout >
+                <lightning-layout-item size="4" padding="around-small">
+                    <lightning-button class="slds-align_absolute-center" label="Save" onclick={handleSaveClick}  variant="brand"></lightning-button>
+                </lightning-layout-item>
+                </lightning-layout>
+                </p>
+ </lightning-card>
+</div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</template>

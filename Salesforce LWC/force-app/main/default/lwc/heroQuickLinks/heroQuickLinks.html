@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 03-31-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   03-31-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <div class="quickLinks slds-var-p-top_large">
+        
+            <h1 class="slds-text-align_center">Quick Links</h1>
+
+        <!-- create rows -->
+        <div class="slds-grid slds-wrap slds-m-top_xx-small">
+            <template for:each={data} for:item="quickLinks">
+                <!-- column created -->
+                <div onclick={handleClick} data-id={quickLinks.Id}
+                class="slds-col image_section slds-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12 slds-align_absolute-center" key={quickLinks.Id}>
+                    <img src={quickLinks.image}/>
+                    <div class="overlay"></div>
+                    <div class="title_class slds-text-align_center">{quickLinks.text}</div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>
