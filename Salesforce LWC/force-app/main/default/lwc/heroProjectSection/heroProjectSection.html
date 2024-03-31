@@ -1,0 +1,48 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 03-31-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   03-31-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <div class="about_div slds-p-around_none slds-m-top_x-small slds-m-bottom_medium">
+        <lightning-layout multiple-rows>
+            <!-- left side -->
+            <lightning-layout-item padding='around-small' size="12"
+                medium-device-size="6" large-device-size="6">
+                
+                    <div class="project_title">
+                        <h1>Projects</h1>
+                    </div>
+                    <div>
+                   <template lwc:if={projectData}>
+                    <lightning-accordion>
+                        <template for:each={projectData} for:item="projectData">
+                            <lightning-accordion-section key={projectData.id} name={projectData.name} label={projectData.name}>
+                                <div class="slds-m-top_small">
+                                    <p class="para_text">{projectData.description}</p>
+                                    <p class="para_text slds-p-top_medium"><Strong>Technology : </Strong>{projectData.technology}</p>
+                                    <p class="para_text slds-p-top_medium" lwc:if={projectData.website}>
+                                        <Strong>Website : </Strong><a target="_blank" href={projectData.website}>{projectData.website}</a>
+                                    </p>
+                                </div>
+                            </lightning-accordion-section>
+                            </template>
+                    </lightning-accordion>
+                   </template>
+                </div>
+            </lightning-layout-item>
+            <!-- right side -->
+            <lightning-layout-item padding='around-small' class="slds-align_absolute-center" size="12" medium-device-size="6"
+                large-device-size="6">
+                <div class="slds-p-around_medium image_section">
+                    <img src={hero3} />
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>
