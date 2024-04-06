@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_and_email_is_requird_for_new_Recor</fullName>
+    <active>false</active>
+    <description>Create a Validation Rule on the Lead object, to make sure either &quot;Phone / Email&quot; should be required for &quot;New Lead Records&quot;.</description>
+    <errorConditionFormula>AND(
+	IsNew(),		
+	   And ( 
+		isBlank(Phone), 
+		isBlank(Email) 
+        	)
+  )</errorConditionFormula>
+    <errorMessage>Phone Field should be Required</errorMessage>
+</ValidationRule>

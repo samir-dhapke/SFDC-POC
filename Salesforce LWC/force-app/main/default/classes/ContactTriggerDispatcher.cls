@@ -13,9 +13,9 @@ public class ContactTriggerDispatcher {
             WHEN AFTER_UNDELETE{
                 ContactTriggerHandler.handleAfterUndelete((Map<Id, Contact>)Trigger.newMap); // Map<Id, sObject>
             }
-            WHEN BEFORE_INSERT{
-                ContactTriggerHandler.handleBeforeInsert(Trigger.new); // Map<Id, sObject>
-            }
+           // WHEN BEFORE_INSERT{
+               // ContactTriggerHandler.handleBeforeInsert(Trigger.new); // Map<Id, sObject>
+           // }
         }
     }
 }

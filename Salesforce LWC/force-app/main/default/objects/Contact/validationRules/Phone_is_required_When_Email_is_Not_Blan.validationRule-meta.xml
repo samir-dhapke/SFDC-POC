@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_is_required_When_Email_is_Not_Blan</fullName>
+    <active>false</active>
+    <description>Create a Validation Rule on the Contact object, to make sure the &quot;Phone Field should be Required&quot;, if the Email has been entered.</description>
+    <errorConditionFormula>AND( Not isBlank(Email), isBlank(Phone))</errorConditionFormula>
+    <errorMessage>Phone Field should be Required</errorMessage>
+</ValidationRule>

@@ -22,8 +22,15 @@ export default class SendParent extends LightningElement {
             this.lastname = event.target.value;
         }
     }
-    onButtonClick() {
-        this.fullName = this.refs.childCmp.fullName(this.firstname, this.lastname);
+    @track someProps = {
+        childName: '',
+        otherProperty: '',
+    };
+
+    onButtonClick(event) {
+        this.someProps.childName = this.firstname;
+        this.someProps.otherProperty = this.lastname;
+        this.fullName = this.refs.childCmp.fullName(this.someProps.childName, this.someProps.otherProperty);
         console.log(' this.fullName ' + this.fullName);
     }
 

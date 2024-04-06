@@ -14,7 +14,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -27,15 +27,12 @@
     <recordCreates>
         <name>Create_Contact</name>
         <label>Create Contact</label>
-        <locationX>238</locationX>
-        <locationY>354</locationY>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
         <assignRecordIdToReference>contactId</assignRecordIdToReference>
         <connector>
             <targetReference>Redirect_To_Contact</targetReference>
         </connector>
-        <faultConnector>
-            <targetReference>RollBack</targetReference>
-        </faultConnector>
         <inputAssignments>
             <field>AccountId</field>
             <value>
@@ -68,20 +65,11 @@
         </inputAssignments>
         <object>Contact</object>
     </recordCreates>
-    <recordRollbacks>
-        <name>RollBack</name>
-        <label>RollBack</label>
-        <locationX>576</locationX>
-        <locationY>269</locationY>
-        <connector>
-            <targetReference>Contact_Information</targetReference>
-        </connector>
-    </recordRollbacks>
     <screens>
         <name>Contact_Information</name>
         <label>Contact Information</label>
-        <locationX>234</locationX>
-        <locationY>212</locationY>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -152,8 +140,8 @@
     <screens>
         <name>Redirect_To_Contact</name>
         <label>Redirect To Contact</label>
-        <locationX>248</locationX>
-        <locationY>503</locationY>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -166,13 +154,13 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>111</locationX>
-        <locationY>50</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Contact_Information</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>contactId</name>
         <dataType>String</dataType>

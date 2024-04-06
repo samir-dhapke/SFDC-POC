@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Result__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Status__c,
+    &quot;Completed&quot;, IMAGE(&quot;/resource/https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fpixabay.com%2Fvectors%2Fsearch%2Fgreen%2520check%2F&amp;psig=AOvVaw3rDIhW9q2Y7U3eNqY2H0Ik&amp;ust=1712042799774000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBIQjRxqFwoTCMCp6Mq-oIUDFQAAAAAdAAAAABAE&quot;, &quot;Completed&quot;),
+    &quot;Visited&quot;, IMAGE(&quot;/resource/https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fred-cross-mark-icon-vector-42639024&amp;psig=AOvVaw1xglNWIIisunp1MskBSmSH&amp;ust=1712042820952000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBIQjRxqFwoTCMDjitW-oIUDFQAAAAAdAAAAABAE&quot;, &quot;Visited&quot;),
+    IMAGE(&quot;/resource/https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dcheck%2Bmark%2Byellow&amp;psig=AOvVaw1lXImr5U-Sqeeg6jqr3njC&amp;ust=1712042607888000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBIQjRxqFwoTCJC61e-9oIUDFQAAAAAdAAAAABAE&quot;, &quot;InProgress&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status Result</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

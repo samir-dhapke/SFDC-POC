@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 04-06-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   04-06-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <lightning-card>
+    <div class="container">
+        <lightning-button icon-name="utility:add" label="Add to Cart" onclick={handleAddToCart}></lightning-button>
+        <span class="cart-icon" if:true={showCart}>
+            <lightning-icon icon-name="utility:cart" size="small"></lightning-icon>
+            <span class="cart_count">{cartCount}</span>
+        </span>
+    </div>
+</lightning-card>
+</template>

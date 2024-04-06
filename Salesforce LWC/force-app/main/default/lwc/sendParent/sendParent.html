@@ -2,7 +2,7 @@
   @description       : 
   @author            : Samir Dhapke
   @group             : 
-  @last modified on  : 03-21-2024
+  @last modified on  : 03-20-2024
   @last modified by  : Samir Dhapke
   Modifications Log
   Ver   Date         Author         Modification
@@ -10,15 +10,15 @@
 -->
 <template>
     <lightning-card title="Parent Component">
-        <lightning-input type='text' name="fname" label='First Name' onchange={handleOnChange}>
+        <lightning-input type='text' name="fname" label='label' onchange={handleOnChange}>
         </lightning-input>
-        <lightning-input type='text' name="lname" label='Last Name' onchange={handleOnChange}>
-        </lightning-input><br>
+        <lightning-input type='text' name="lname" label='label' onchange={handleOnChange}>
+        </lightning-input>
         <div>
             <lightning-button class='slds-m-left_medium' label="Find Buttons" variant="brand"
                 onclick={onButtonClick}></lightning-button>
         </div>
-        <c-send-child lwc:ref="childCmp"></c-send-child><br>
+        <c-send-child lwc:spread={someProps} lwc:ref="childCmp"></c-send-child><br>
         {fullName}
     </lightning-card>
 </template>

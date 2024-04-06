@@ -1,6 +1,6 @@
 public class ContactTriggerHandler {
 
-    public static void handleBeforeInsert(List<Contact> conList){
+   /* public static void handleBeforeInsert(List<Contact> conList){
         set<id> accId = new set<Id>();
         for(Contact c : conList){
             if(c.AccountId != null){
@@ -18,7 +18,7 @@ public class ContactTriggerHandler {
                 con.addError('You can not insert Contact');
             }
         }
-    }
+    }*/
     public static void handleAfterInsert(Map<Id, Contact> newRecordsMap){
         ContactTriggerHelper.countContact(newRecordsMap);
     }
@@ -37,6 +37,9 @@ public class ContactTriggerHandler {
                 accountIdsSet.add(newRecord.AccountId); // XYZ
             }
         }
+        system.debug(accountIdsSet);
+        // here in aggregate query although we are updating the account id but and now older account will have 0 contact
+        // but still aggregate query returns 1 row for that account
         List<AggregateResult> aggregateList = [SELECT count(Id), AccountId
                                                FROM Contact
                                                WHERE AccountId IN:accountIdsSet
@@ -50,7 +53,23 @@ public class ContactTriggerHandler {
             accountRecord.Id = accountId;
             accountRecord.Number_of_Contacts__c = totalContact;
             accountListToUpdate.add(accountRecord);
+            system.debug(accountId);
+       //remove accountId
+            accountIdsSet.remove(accountId);
         }
+        system.debug('accountIdsSet '+accountIdsSet);
+        if(accountIdsSet.size()>0){
+            for(Id accountId:accountIdsSet){
+                Account accountRecord = new Account();
+                accountRecord.Id = accountId;
+                accountRecord.Number_of_Contacts__c = 0;
+                accountListToUpdate.add(accountRecord);
+            }
+        }
+       
+        // if any account will have 0 contacts while updating in that case aggregate query 
+// will not update it we have to handle it manually in code bec aggregate query return atleast one row for that
+        system.debug(accountListToUpdate);
         update accountListToUpdate;
     }
 }

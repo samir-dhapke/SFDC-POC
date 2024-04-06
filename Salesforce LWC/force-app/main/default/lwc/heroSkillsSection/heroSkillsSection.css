@@ -13,21 +13,19 @@
     word-spacing: 2px;
 }
 
-.profile_title {
-    margin-bottom: 20px;
-    font-weight: 800;
-    border-bottom: 4px solid #A020f0;
-    border-bottom-width: thick;
-    width: 70px;
+.profile_title{
+margin-bottom: 20px;
+font-weight: 800;
+border-bottom: 4px solid #A020f0;
+border-bottom-width: thick;
+width: 70px;
 }
-
-.profile_title h1 {
+.profile_title h1{
     font-size: 30px;
     font-weight: 800;
     color: black;
 }
-
-.profile_pic img {
+.profile_pic img{
     display: flex;
     justify-content: center;
     align-items: center;

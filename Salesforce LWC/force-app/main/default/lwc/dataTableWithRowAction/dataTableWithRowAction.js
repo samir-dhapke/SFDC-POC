@@ -1,3 +1,13 @@
+/**
+ * @description       : 
+ * @author            : Samir Dhapke
+ * @group             : 
+ * @last modified on  : 04-06-2024
+ * @last modified by  : Samir Dhapke 
+ * Modifications Log
+ * Ver   Date         Author         Modification
+ * 1.0   04-06-2024   Samir Dhapke   Initial Version
+**/
 import { LightningElement, api, track } from 'lwc';
 import getRelatedContact from '@salesforce/apex/ContactClass.getRelatedContact';
 import updatePrimaryContact from '@salesforce/apex/ContactClass.updatePrimaryContact';
@@ -6,7 +16,6 @@ import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { notifyRecordUpdateAvailable } from 'lightning/uiRecordApi';
 import { refreshApex } from '@salesforce/apex';
-
 
 const actions = [
     { label: 'Assign', name: 'assign' },

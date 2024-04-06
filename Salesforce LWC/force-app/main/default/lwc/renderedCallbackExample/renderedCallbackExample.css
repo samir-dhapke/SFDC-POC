@@ -1,0 +1,14 @@
+ .container {
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+cart_count {
+    margin-left: 5px;
+}

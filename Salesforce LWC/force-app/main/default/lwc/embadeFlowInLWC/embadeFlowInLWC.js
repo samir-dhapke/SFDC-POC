@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Samir Dhapke
  * @group             : 
- * @last modified on  : 02-02-2024
+ * @last modified on  : 04-06-2024
  * @last modified by  : Samir Dhapke
  * Modifications Log
  * Ver   Date         Author         Modification
@@ -12,7 +12,7 @@ import { LightningElement, api } from 'lwc';
 
 export default class EmbadeFlowInLWC extends LightningElement {
     @api recordId;
-    get inputVariables() { // get method will always return array
+    get inputVariables() {
         return [
             {
                 name: 'AccountId',
@@ -28,7 +28,6 @@ export default class EmbadeFlowInLWC extends LightningElement {
     }
     handleStatusChange(event) {
         if (event.detail.status === 'FINISHED') {
-            // set behavior after a finished flow interview
             let outputValues = event.detail.outputVariables;
             for (let i = 0; i < outputValues.length; i++) {
                 let outputItem = outputValues[i];

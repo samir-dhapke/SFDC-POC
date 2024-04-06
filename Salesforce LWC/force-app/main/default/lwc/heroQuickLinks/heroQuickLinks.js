@@ -42,13 +42,14 @@ export default class HeroQuickLinks extends NavigationMixin(LightningElement) {
         else {
             this.nevigateToPage('certification__c');
         }
-        nevigateToPage(pageApiName) {
-            console.log('pageApiName==> ' + JSON.stringify(pageApiName));
-            this[NavigationMixin.Navigate]({
-                type: 'comm__namedPage',
-                attributes: {
-                    name: pageApiName
-                },
-            });
-        }
     }
+    nevigateToPage(pageApiName) {
+        console.log('pageApiName==> ' + JSON.stringify(pageApiName));
+        this[NavigationMixin.Navigate]({
+            type: 'comm__namedPage',
+            attributes: {
+                name: pageApiName
+            },
+        });
+    }
+}

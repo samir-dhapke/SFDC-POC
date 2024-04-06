@@ -2,12 +2,13 @@
  * @description       : 
  * @author            : Samir Dhapke
  * @group             : 
- * @last modified on  : 02-02-2024
+ * @last modified on  : 04-06-2024
  * @last modified by  : Samir Dhapke
  * Modifications Log
  * Ver   Date         Author         Modification
- * 1.0   02-02-2024   Samir Dhapke   Initial Version
+ * 1.0   04-06-2024   Samir Dhapke   Initial Version
 **/
+
 import { LightningElement, api, wire } from 'lwc';
 import ACCOUNT_RATING from '@salesforce/schema/Account.Rating';
 import { getFieldValue, getRecord } from 'lightning/uiRecordApi';
@@ -35,7 +36,7 @@ export default class DisplayFlowConditionally extends LightningElement {
         return this.accountrating === "Cold" ? true : false;
     }
 
-    get inputVariables() {// we can also pass SObject also
+    get inputVariables() {// we can also pass SObject here
         return [
             {
                 name: 'inputRating',
