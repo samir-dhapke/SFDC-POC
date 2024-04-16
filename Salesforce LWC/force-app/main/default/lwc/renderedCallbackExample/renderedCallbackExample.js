@@ -18,6 +18,10 @@ export default class RenderedCallbackExample extends LightningElement {
         this.cartCount++;
         this.showCart = true;
     }
+    // handleRemoveToCart() {
+    //     this.cartCount--;
+    //     //this.showCart = true;
+    // }
     renderedCallback() {
         const cartCountElement = this.template.querySelector('.cart-count');
         if (cartCountElement) {

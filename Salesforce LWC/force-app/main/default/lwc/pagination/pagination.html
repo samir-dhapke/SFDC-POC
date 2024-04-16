@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 04-08-2024
+  @last modified by  : Samir Dhapke 
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   04-08-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <lightning-layout>
+        <lightning-layout-item>
+            <lightning-button label="Previous" 
+            icon-name="utility:chevronleft"
+            onclick={previousHandler}
+            disabled={disablePrevious}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="grow">
+            <p class="slds-text-align_center">Displaying {currentPage} of {totalPage} Page</p>
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-button label="next" 
+            icon-name="utility:chevronright"
+            icon-position="right"
+            onclick={nextHandler}
+            disabled={disableNext}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

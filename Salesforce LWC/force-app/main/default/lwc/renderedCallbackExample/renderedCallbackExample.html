@@ -12,6 +12,8 @@
     <lightning-card>
     <div class="container">
         <lightning-button icon-name="utility:add" label="Add to Cart" onclick={handleAddToCart}></lightning-button>
+        <!-- <lightning-button label=" - Remove from Cart" onclick={handleRemoveToCart}></lightning-button> -->
+        
         <span class="cart-icon" if:true={showCart}>
             <lightning-icon icon-name="utility:cart" size="small"></lightning-icon>
             <span class="cart_count">{cartCount}</span>

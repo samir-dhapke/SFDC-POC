@@ -1,0 +1,88 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 04-11-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   04-09-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <div class="head slds-align_absolute-center" style="font-size: 20px;">Edit Opportunity Line Item</div><br><br>
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered"
+        aria-label="Example table of Opportunities with vertical borders">
+        <thead>
+            <tr class="head slds-line-height_reset">
+             
+                <th class="headColor" scope="col">
+                    <div class="slds-truncate" title="S.No">S.No</div>
+                </th>
+           
+                <th class="headColor" scope="col">
+                    <div class="slds-truncate" title="Opportunity Line Item">Opportunity Line Item</div>
+                </th>
+                <th class="headColor" scope="col">
+                    <div class="slds-truncate" title="Product Name">Product  Name</div>
+                </th>
+                <th class="headColor" scope="col">
+                    <div class="slds-truncate" title="DIS Type">DIS Type</div>
+                </th>
+                <th class="headColor" scope="col">
+                    <div class="slds-truncate" title="DIS Value">DIS Value</div>
+                </th>
+                <th class="headColor" scope="col">
+                    <div class="slds-truncate" title="Quantity">Quantity</div>
+                </th>
+                <th class="headColor" scope="col">
+                    <div class="slds-truncate" title="Action">Action</div>
+                </th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={records} for:item="obj">
+            <tr class="slds-hint-parent" key={obj.Id}>
+                <th data-label="S.No" scope="row">
+                    <div class="slds-truncate" title="Cloudhub">
+                        {obj.displayIndex}
+                    </div>
+                </th>
+                <th data-label="Opportunity Line Item" scope="row">
+                    <div class="slds-truncate" title="Cloudhub">
+                        {obj.Name}
+                    </div>
+                </th>
+            
+                <td data-label="Product Name">
+                    <div class="slds-truncate" title="Cloudhub">{obj.Product2.Name}</div>
+                </td>
+                <td data-label="DIS Type">
+                    
+                    <lightning-combobox value={obj.Discount_Type__c} data-id={obj.Id} options={options} placeholder="Select a Discount Type"
+                        onchange={handleComboBoxChange}>
+                    </lightning-combobox>
+                </td>
+                <td data-label="DIS Value">
+                   
+               <lightning-input type='text' value={obj.Dicount_Value__c} data-id={obj.Id} onchange={handleDiscountChange}>
+               </lightning-input>
+                </td>
+                <td data-label="Quantity">
+                    <!-- <div class="slds-truncate" title="Quantity">{obj.Quantity}</div> -->
+                    <lightning-input type='text' value={obj.Quantity} data-id={obj.Id} onchange={handleQuantityChange}>
+                    </lightning-input>
+                </td>
+                <td data-label="Action">
+                   <lightning-icon icon-name='utility:delete' data-id={obj.Id} onclick={handleDeleteAction}>
+                   </lightning-icon> 
+                </td>
+               </tr> 
+            
+        </template>
+        </tbody>
+    </table>
+        <lightning-button variant="brand" class="slds-m-top_medium slds-align_absolute-center" label="Save" onclick={handleSaveAction}></lightning-button>
+ 
+</template>

@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 04-07-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   04-07-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <div style="height:200px;">
+        <lightning-card title="Accounts" icon-name="custom:custom63">      
+            <template if:true={accountRecords}>                       
+                <div style="height:300px;">       
+                      <lightning-datatable
+                        key-field='Id'
+                        data={data}
+                        columns={columns}
+                        hide-checkbox-column
+                      ></lightning-datatable>   
+                </div>
+            </template>             
+        </lightning-card>   
+    </div>    
+</template>

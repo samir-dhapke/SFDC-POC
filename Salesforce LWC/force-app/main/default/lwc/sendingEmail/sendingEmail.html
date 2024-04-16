@@ -1,0 +1,71 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 04-09-2024
+  @last modified by  : Samir Dhapke 
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   04-09-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+        <div class="slds-card" style="height: 400px;">
+        <lightning-input label="To" value={toAddress} name="add" class="add slds-p-around_x-small"></lightning-input>
+        <lightning-input label="Cc" value={toCcAddress}  class="CcAdd slds-p-around_x-small"></lightning-input >
+        <lightning-input label="Subject" value={subject}  class="subject slds-p-around_x-small"></lightning-input>
+        <lightning-input-rich-text label="Mail Body" value={mailBody}  class="body slds-p-around_x-small"></lightning-input-rich-text>
+        <lightning-button label="Send Email" variant="brand" onclick={handleSendEmail} class="slds-m-left_xx-large"></lightning-button>
+        <br>
+        <br>
+        <lightning-layout>
+            <lightning-layout-item size="12">
+                <lightning-layout>
+                    <lightning-layout-item size="2">
+    
+                    </lightning-layout-item>
+                </lightning-layout>
+                <lightning-layout>
+                    <lightning-layout-item size="4">
+                        <div>
+                            <lightning-file-upload
+                                label="Attach receipt 1"
+                                name="fileUploader"
+                                accept={acceptedFormats}
+                                record-id={recordId}
+                                onuploadfinished={handleUploadFinished}
+                                multiple>
+                            </lightning-file-upload>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="3">
+                        <div>
+                            <lightning-file-upload
+                                label="Attach receipt 2"
+                                name="fileUploader"
+                                accept={acceptedFormats}
+                                record-id={recordId}
+                                onuploadfinished={handleUploadFinished}
+                                multiple>
+                            </lightning-file-upload>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="3">
+                        <div>
+                            <lightning-file-upload
+                                label="Attach receipt 3"
+                                name="fileUploader"
+                                accept={acceptedFormats}
+                                record-id={recordId}
+                                onuploadfinished={handleUploadFinished}
+                                multiple>
+                            </lightning-file-upload>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+      </div>
+   </div>
+   <div style="height: 50px;"></div>
+</template>

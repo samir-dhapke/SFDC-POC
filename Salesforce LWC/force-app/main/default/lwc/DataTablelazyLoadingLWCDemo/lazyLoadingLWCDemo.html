@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 04-07-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   04-07-2024   Samir Dhapke   Initial Version
+-->
+<template>
+  <div class="slds-var-p-around_small" style="height:500px">
+    <lightning-datatable 
+              key-field="Id" 
+              data={accountRecords} 
+              columns={columns} 
+              hide-checkbox-column
+              show-row-number-column 
+              enable-infinite-loading={infiniteLoadingBool} 
+              is-loading={isLoadingBool}
+              onloadmore={onLoadMore}>
+    </lightning-datatable>
+    <!-- To enable infinite scrolling, specify enable-infinite-loading and provide an event 
+            handler using onloadmore. -->
+  </div>
+</template>

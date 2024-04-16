@@ -1,0 +1,142 @@
+<!--
+  @description       : 
+  @author            : Samir Dhapke
+  @group             : 
+  @last modified on  : 04-16-2024
+  @last modified by  : Samir Dhapke
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   04-12-2024   Samir Dhapke   Initial Version
+-->
+<template>
+    <Lightning-card>
+        <div class="slds-align_absolute-center">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input type="search" label="Product Name" onchange={handleChange}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-combobox value={productCategory} label="Principal" placeholder="Select Principal"
+                        options={options} onchange={handlePrincipalChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="btn slds-col">
+                    <lightning-button icon-name="utility:search" class="btn slds-m-top_medium" variant='brand'
+                        onclick={handleOnClick}></lightning-button>
+                </div>
+            </div>
+        </div>
+       
+        <div>
+        </div><br><br>
+        <div>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered"
+                aria-label="Example table of Opportunities with vertical borders">
+                <thead>
+                    <tr class="head slds-line-height_reset">
+
+                        <th class="headColor" scope="col">
+                            <lightning-input 
+                                        type="checkbox" 
+                                        checked={allSelected} 
+                                        onchange={handleCheckAll}>
+                            </lightning-input>
+                        </th>
+
+                        <th class="headColor" scope="col">
+                            <div class="slds-truncate" title="Product Name">Product Name</div>
+                        </th>
+                        <th class="headColor" scope="col">
+                            <div class="slds-truncate" title="Product Code">Product Code</div>
+                        </th>
+                        <th class="headColor" scope="col">
+                            <div class="slds-truncate" title="Principal">Principal</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template lwc:if={productsData}>
+                      <template for:each={productsData} for:item="obj">
+                            <tr class="slds-hint-parent" key={obj.Id}>
+                                <td>
+                                    <div class="slds-truncate" title="Cloudhub">
+                                        <lightning-input 
+                                                        type="checkbox" 
+                                                        checked={obj.isChecked} 
+                                                        onchange={handleCheckboxChange} 
+                                                        data-id={obj.Id}>
+                                        </lightning-input>
+                                    </div>
+                                </td>
+                                <td data-label="Product Name">
+                                    <div class="slds-truncate" title="Cloudhub">{obj.Name}</div>
+                                </td>
+
+                                <td data-label="Product Code">
+                                    <div class="slds-truncate" title="Product Code">{obj.ProductCode}</div>
+                                </td>
+                                <td data-label="Principal">
+                                    <div class="slds-truncate" title="Cloudhub">{obj.Principal__c}</div>
+                                </td>
+                            </tr>
+
+                        </template>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+  
+        <lightning-button variant='brand' class="slds-m-top_small slds-align_absolute-center" label='Add More' title='title' onclick={handleOnAddMoreClick}>
+        </lightning-button><br><br>
+
+        <!-- next page  -->
+        <div class="slds-align_absolute-center" style="background-color: rgb(67, 67, 182);color: white;">Selected Records</div>
+        <div>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered"
+                aria-label="Example table of Opportunities with vertical borders">
+                <thead>
+                    <tr class="head slds-line-height_reset">
+
+                        <th class="headColor" scope="col">
+                            <div class="slds-align_absolute-center">Sr.No</div>
+                        </th>
+
+                        <th class="headColor" scope="col">
+                            <div class="slds-truncate" title="Product Name">Product Name</div>
+                        </th>
+                        <th class="headColor" scope="col">
+                            <div class="slds-truncate" title="Product Code">Product Code</div>
+                        </th>
+                        <th class="headColor" scope="col">
+                            <div class="slds-truncate" title="Principal">Principal</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template lwc:if={selectedRecordListUpdated}>
+                      <template for:each={selectedRecordListUpdated} for:item="obj">
+                            <tr class="slds-hint-parent" key={obj.Id}>
+                                <td>
+                                    <div class="slds-align_absolute-center slds-truncate " title="Sr. No">
+                                        {obj.displayIndex}
+                                    </div>
+                                </td>
+                                <td data-label="Product Name">
+                                    <div class="slds-truncate" title="Cloudhub">{obj.Name}</div>
+                                </td>
+
+                                <td data-label="Product Code">
+                                    <div class="slds-truncate" title="Product Code">{obj.ProductCode}</div>
+                                </td>
+                                <td data-label="Principal">
+                                    <div class="slds-truncate" title="Cloudhub">{obj.Principal__c}</div>
+                                </td>
+                            </tr>
+
+                        </template>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </Lightning-card>
+</template>
